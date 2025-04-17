@@ -1,0 +1,26 @@
+{
+    "deck" : {
+        "id": "java-deck",
+        "name": "Java",
+        "description": "Pokročilé porgramování v jazyce Java",
+        "cards": {
+            "p1": {
+                "front": "Java",
+                "back": "Java je objektově orientovaný jazyk, který je určen pro multiplatformní vývoj aplikací."
+            },
+            "p2": {
+                "front": "JVM",
+                "back": "Java Virtual Machine (JVM) je virtuální stroj, který umožňuje spouštět Java aplikace na různých platformách."
+            },
+            "p3": {
+                "front": "JDK",
+                "back": "Java Development Kit (JDK) je sada nástrojů pro vývoj Java aplikací, včetně kompilátoru a knihoven."
+            }
+        },
+        "tags": [
+            "Přednáška #1",
+            "Přednáška #2",
+            "ReflectionAPI"
+        ]
+    }
+}

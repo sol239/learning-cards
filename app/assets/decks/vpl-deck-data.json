@@ -1,0 +1,859 @@
+{
+  "deck": {
+    "id": "vpl-deck",
+    "name": "Výroková a predikátová logika",
+    "tags": [
+      "logika",
+      "zkouška",
+      "vygenerováno"
+    ],
+    "questions": {
+      "p1": {
+        "front": "Model ve výrokové logice",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 1
+      },
+      "p2": {
+        "front": "Pravdivostní funkce výroku",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 2
+      },
+      "p3": {
+        "front": "Sémantické pojmy",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 3
+      },
+      "p4": {
+        "front": "Pravdivost",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 4
+      },
+      "p5": {
+        "front": "Lživost",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 5
+      },
+      "p6": {
+        "front": "Nezávislost",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 6
+      },
+      "p7": {
+        "front": "Splnitelnost",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 7
+      },
+      "p8": {
+        "front": "V logice, vzhledem k teorii",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 8
+      },
+      "p9": {
+        "front": "Ekvivalence výroku",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 9
+      },
+      "p10": {
+        "front": "Ekvivalence výrokových teorií",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 10
+      },
+      "p11": {
+        "front": "T-ekvivalence",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 11
+      },
+      "p12": {
+        "front": "Sémantické pojmy o teorii",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 12
+      },
+      "p13": {
+        "front": "Sporná",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 13
+      },
+      "p14": {
+        "front": "Bezesporná",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 14
+      },
+      "p15": {
+        "front": "Kompletní",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 15
+      },
+      "p16": {
+        "front": "Splnitelná",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 16
+      },
+      "p17": {
+        "front": "Extenze teorie",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 17
+      },
+      "p18": {
+        "front": "Jednoduchá",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 18
+      },
+      "p19": {
+        "front": "Konzervativní",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 19
+      },
+      "p20": {
+        "front": "Odpovídající sémantická kritéria",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 20
+      },
+      "p21": {
+        "front": "Tablo z teorie",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 21
+      },
+      "p22": {
+        "front": "Tablo důkaz",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 22
+      },
+      "p23": {
+        "front": "Kongruence struktury",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 23
+      },
+      "p24": {
+        "front": "Faktorstruktura",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 24
+      },
+      "p25": {
+        "front": "Axiomy rovnosti",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 25
+      },
+      "p26": {
+        "front": "CNF a DNF",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 26
+      },
+      "p27": {
+        "front": "Hornův tvar",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 27
+      },
+      "p28": {
+        "front": "Množinová reprezentace CNF formule",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 28
+      },
+      "p29": {
+        "front": "Splňující ohodnocení",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 29
+      },
+      "p30": {
+        "front": "Rezoluční pravidlo",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 30
+      },
+      "p31": {
+        "front": "(Nejobecnější) unifikace",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 31
+      },
+      "p32": {
+        "front": "Rezoluční důkaz",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 32
+      },
+      "p33": {
+        "front": "Zamítnutí",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 33
+      },
+      "p34": {
+        "front": "Signatura a jazyk predikátové logiky",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 34
+      },
+      "p35": {
+        "front": "Struktura daného jazyka",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 35
+      },
+      "p36": {
+        "front": "Atomická formule",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 36
+      },
+      "p37": {
+        "front": "Formule",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 37
+      },
+      "p38": {
+        "front": "Sentence",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 38
+      },
+      "p39": {
+        "front": "Otevřené formule",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 39
+      },
+      "p40": {
+        "front": "Pravdivostní hodnota formule ve struktuře při ohodnocení",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 40
+      },
+      "p41": {
+        "front": "Platnost formule ve struktuře",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 41
+      },
+      "p42": {
+        "front": "Kompletní teorie v predikátové logice",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 42
+      },
+      "p43": {
+        "front": "Elementární ekvivalence",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 43
+      },
+      "p44": {
+        "front": "Podstruktura",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 44
+      },
+      "p45": {
+        "front": "Generovaná podstruktura",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 45
+      },
+      "p46": {
+        "front": "Expanze a redukt struktury",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 46
+      },
+      "p47": {
+        "front": "Definovatelnost ve struktuře",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 47
+      },
+      "p48": {
+        "front": "Extenze o definice",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 48
+      },
+      "p49": {
+        "front": "Prenexní normální forma",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 49
+      },
+      "p50": {
+        "front": "Skolemova varianta",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 50
+      },
+      "p51": {
+        "front": "Herbrandův model",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 51
+      },
+      "p52": {
+        "front": "Srovnání s kanonickým modelem",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 52
+      },
+      "p53": {
+        "front": "Izomorfismus struktur",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 53
+      },
+      "p54": {
+        "front": "ω-kategorická teorie",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 54
+      },
+      "p55": {
+        "front": "Axiomatizovatelnost",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 55
+      },
+      "p56": {
+        "front": "Konečná axiomatizovatelnost",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 56
+      },
+      "p57": {
+        "front": "Otevřená axiomatizovatelnost",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 57
+      },
+      "p58": {
+        "front": "Rekurzivní axiomatizace",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 58
+      },
+      "p59": {
+        "front": "Rekurzivní axiomatizovatelnost",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 59
+      },
+      "p60": {
+        "front": "Rekurzivně spočetná kompletace",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 60
+      },
+      "p61": {
+        "front": "Rozhodnutelná teorie",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 61
+      },
+      "p62": {
+        "front": "Částečně rozhodnutelná teorie",
+        "back": "",
+        "tags": [
+          "pojem"
+        ],
+        "level": 0,
+        "id": 62
+      },
+      "l1": {
+        "front": "Množinu modelů nad konečným jazykem lze axiomatizovat výrokem v CNF, výrokem v DNF.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 63
+      },
+      "l2": {
+        "front": "2-SAT, Algoritmus implikačního grafu, jeho korektnost.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 64
+      },
+      "l3": {
+        "front": "Horn-SAT, Algoritmus jednotkové propagace, jeho korektnost.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 65
+      },
+      "l4": {
+        "front": "Vlastnosti extenze o definice.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 66
+      },
+      "l5": {
+        "front": "Vztah definovatelných množin a automorfismů.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 67
+      },
+      "l6": {
+        "front": "Tablo metoda v jazyce s rovností.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 68
+      },
+      "l7": {
+        "front": "Věta o kompaktnosti a její aplikace.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 69
+      },
+      "l8": {
+        "front": "Věta o korektnosti rezoluce ve výrokové logice.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 70
+      },
+      "l9": {
+        "front": "Věta o korektnosti rezoluce v predikátové logice.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 71
+      },
+      "l10": {
+        "front": "Souvislost stromu dosažení a splnitelnosti CNF formule.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 72
+      },
+      "l11": {
+        "front": "Nestandardní model přirozených čísel.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 73
+      },
+      "l12": {
+        "front": "Existence spočetného algebraicky uzavřeného tělesa.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 74
+      },
+      "l13": {
+        "front": "Tělesa charakteristiky 0 nejsou konečně axiomatizovatelná.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 75
+      },
+      "l14": {
+        "front": "Kritérium otevřené axiomatizovatelnosti.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 76
+      },
+      "l15": {
+        "front": "Rekurzivně axiomatizovaná teorie je částečně rozhodnutelná, kompletní je rozhodnutelná.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 77
+      },
+      "l16": {
+        "front": "Teorie konečné struktury v konečném jazyce s rovností je rozhodnutelná.",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 78
+      },
+      "l17": {
+        "front": "Gödelovy věty o neúplnosti a jejich důsledky (bez důkazů).",
+        "back": "",
+        "tags": [
+          "lehká"
+        ],
+        "level": 0,
+        "id": 79
+      },
+      "t1": {
+        "front": "Věta o korektnosti tablo metody ve výrokové logice.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 80
+      },
+      "t2": {
+        "front": "Věta o korektnosti tablo metody v predikátové logice.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 81
+      },
+      "t3": {
+        "front": "Věta o úplnosti tablo metody ve výrokové logice.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 82
+      },
+      "t4": {
+        "front": "Věta o úplnosti tablo metody v predikátové logice.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 83
+      },
+      "t5": {
+        "front": "Věta o konečnosti sporu, důsledky o konečnosti a systematičnosti důkazů.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 84
+      },
+      "t6": {
+        "front": "Věta o úplnosti rezoluce ve výrokové logice.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 85
+      },
+      "t7": {
+        "front": "Věta o úplnosti rezoluce v predikátové logice (Lifting lemma stačí vyslovit).",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 86
+      },
+      "t8": {
+        "front": "Skolemova věta.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 87
+      },
+      "t9": {
+        "front": "Herbrandova věta.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 88
+      },
+      "t10": {
+        "front": "Löwenheim-Skolemova věta včetně varianty s rovností, jejich důsledky.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 89
+      },
+      "t11": {
+        "front": "Vztah izomorfismu a elementární ekvivalence.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 90
+      },
+      "t12": {
+        "front": "ω-kategorické kritérium kompletnosti.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 91
+      },
+      "t13": {
+        "front": "Neaxiomatizovatelnost konečných modelů.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 92
+      },
+      "t14": {
+        "front": "Věta o konečné axiomatizovatelnosti.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 93
+      },
+      "t15": {
+        "front": "Rekurzivně axiomatizovaná teorie s rekurzivně spočetnou kompletací je rozhodnutelná.",
+        "back": "",
+        "tags": [
+          "těžká"
+        ],
+        "level": 0,
+        "id": 94
+      }
+    }
+  }
+}
