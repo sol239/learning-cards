@@ -2,6 +2,17 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  app: {
+    head: {
+      script: [
+        {
+          src: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js',
+          async: true,
+        },
+      ],
+    },
+  },
+
   modules: [
     '@nuxt/ui',
     '@nuxt/eslint',

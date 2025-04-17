@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router';
 import { ref } from 'vue';
 import { navigateTo } from '#app';
+import { marked } from 'marked';
 
 // Načti route a získej ID z URL
 const route = useRoute();
@@ -9,9 +10,18 @@ const deckId = route.params.id;
 
 const deck = ref(null);
 const error = ref(null);
+const showAllBacks = ref(false); // State to control showing all backs
+
+const questionKatexDict = ref(null);
 
 // Importuj všechny decky
 const deckModules = import.meta.glob('~/assets/decks/*.json', { eager: true });
+
+// Function to render content and trigger MathJax typesetting
+const renderContent = (content) => {
+    if (!content) return '';
+    return marked.parse(content);
+};
 
 try {
     const decks = Object.values(deckModules).map(module => module.default?.deck).filter(Boolean);
@@ -19,6 +29,8 @@ try {
 
     if (!deck.value) {
         error.value = `Deck with ID '${deckId}' not found.`;
+    } else {
+        questionKatexDict.value = getQuestionsKatex(deck.value.questions);
     }
 } catch (err) {
     console.error('Error loading decks:', err);
@@ -44,14 +56,33 @@ function resetDeckLevels() {
     console.log(`Levels reset for deck: ${deck.value.name} (ID: ${deck.value.id})`);
 }
 
+// Toggle visibility of all card backs
+function toggleShowAllBacks() {
+    showAllBacks.value = !showAllBacks.value;
+    
+    // If we're showing backs, update visibleBacks for all questions
+    if (showAllBacks.value && deck.value && deck.value.questions) {
+        Object.keys(deck.value.questions).forEach(key => {
+            visibleBacks.value[key] = true;
+        });
+        // Trigger MathJax update after showing all backs
+        setTimeout(updateMathJax, 100);
+    } else {
+        // Hide all backs
+        visibleBacks.value = {};
+    }
+    
+    console.log(`Show all backs: ${showAllBacks.value}`);
+}
+
 function goBackToDecks() {
     navigateTo('/decks'); // Nebo '/decks' pokud máš stránku přímo na této adrese
 }
 
 const hoveredQuestion = ref(null);
 
-function handleHover(question) {
-    hoveredQuestion.value = question;
+function handleHover(question, key) {
+    hoveredQuestion.value = { ...question, key };
 }
 
 function clearHover() {
@@ -66,11 +97,73 @@ const visibleBacks = ref({})
 
 function toggleBackVisibility(key) {
     if (visibleBacks.value[key]) {
-        visibleBacks.value[key] = false
+        visibleBacks.value[key] = false;
     } else {
-        visibleBacks.value[key] = true
+        visibleBacks.value[key] = true;
+        // Spusť MathJax po zobrazení obsahu
+        setTimeout(updateMathJax, 100);
     }
 }
+
+// function for each question create katex using renderContent
+function getQuestionsKatex() {
+    const katexDictionary = {}; // Correct spelling
+    if (deck.value && deck.value.questions) {
+        Object.keys(deck.value.questions).forEach(key => {
+            const question = deck.value.questions[key];
+            if (question) {
+                const frontKatex = renderContent(question.front);
+                const backKatex = renderContent(question.back);
+                katexDictionary[key] = { front: frontKatex, back: backKatex };
+            }
+        });
+    }
+    return katexDictionary; // Correct spelling
+}
+
+onMounted(() => {
+    // Add MathJax script
+    if (!document.getElementById('mathjax-script')) {
+        const script = document.createElement('script');
+        script.id = 'mathjax-script';
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.async = true;
+        document.head.appendChild(script);
+
+        // Configure MathJax
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            startup: {
+                pageReady: () => {
+                    // Typeset the page when MathJax is loaded
+                    if (window.MathJax.typesetPromise) {
+                        window.MathJax.typesetPromise();
+                    }
+                }
+            }
+        };
+
+        questionKatexDict.value = getQuestionsKatex();
+    }
+});
+
+// Function to trigger MathJax typesetting after content updates
+const updateMathJax = () => {
+    setTimeout(() => {
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise();
+        }
+    }, 100);
+};
+
+// Watch for changes to hoveredQuestion to trigger MathJax rendering
+watch(() => hoveredQuestion.value, () => {
+    updateMathJax();
+}, { deep: true });
 </script>
 
 <template>
@@ -91,16 +184,26 @@ function toggleBackVisibility(key) {
                     @click="resetDeckLevels">
                     Reset
                 </UButton>
+                
+                <UButton icon="i-lucide-eye" size="sm" color="neutral" :variant="showAllBacks ? 'solid' : 'outline'"
+                    @click="toggleShowAllBacks">
+                    {{ showAllBacks ? 'Hide All' : 'Show All' }}
+                </UButton>
             </div>
 
             <div v-if="deck.questions && Object.keys(deck.questions).length > 0">
                 <!-- Grid view -->
                 <UCard class="mb-4" v-if="value === 'Grid'">
                     <div class="heatmap-container">
-                        <div v-for="(question, key) in deck.questions" :key="key" class="heatmap-cell"
-                            :class="`heat-${question.level || 0}`" :title="question.front" 
+                        <div v-for="(question, key) in deck.questions" :key="key" 
+                            class="heatmap-cell"
+                            :class="[`heat-${question.level || 0}`, {'show-back': showAllBacks}]" 
+                            :title="question.front" 
                             @click="increaseLevel(key)"
-                            @mouseover="handleHover(question)" @mouseleave="clearHover" />
+                            @mouseover="handleHover(question, key)" 
+                            @mouseleave="clearHover">
+                            <div v-if="showAllBacks" class="card-back" v-html="questionKatexDict[key]?.back || ''"></div>
+                        </div>
                     </div>
                 </UCard>
 
@@ -109,22 +212,22 @@ function toggleBackVisibility(key) {
                     <UCard v-for="(question, key) in deck.questions" :key="key" class="mb-3">
                         <div class="flex items-start">
                             <div class="flex-1">
-                                <div class="font-semibold mb-2">{{ question.front }}</div>
-                                
-                                <div v-if="visibleBacks[key]" class="mt-2 pt-2 border-t border-gray-200">
-                                    <div class="text-gray-700">{{ question.back }}</div>
+                                <div class="font-semibold mb-2" v-html="questionKatexDict[key]?.front || ''"></div>
+
+                                <div v-if="visibleBacks[key] || showAllBacks" class="mt-2 pt-2 border-t border-gray-200">
+                                    <p class="math-content" v-html="questionKatexDict[key]?.back || ''"></p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex flex-col items-end space-y-2 ml-4">
-                                <div class="heatmap-cell-list" 
-                                    :class="`heat-${question.level || 0}`"
+                                <div class="heatmap-cell-list" :class="`heat-${question.level || 0}`"
                                     @click="increaseLevel(key)" />
-                                
-                                <UButton  size="sm" color="neutral" variant="outline" 
-                                    :icon="visibleBacks[key] ? 'i-lucide-eye-off' : 'i-lucide-eye'"
-                                    @click="toggleBackVisibility(key)">
-                                    {{ visibleBacks[key] ? 'Hide' : 'Show' }}
+
+                                <UButton size="sm" color="neutral" variant="outline"
+                                    :icon="(visibleBacks[key] || showAllBacks) ? 'i-lucide-eye-off' : 'i-lucide-eye'"
+                                    @click="toggleBackVisibility(key)" 
+                                    :disabled="showAllBacks">
+                                    {{ (visibleBacks[key] || showAllBacks) ? 'Hide' : 'Show' }}
                                 </UButton>
                             </div>
                         </div>
@@ -141,7 +244,8 @@ function toggleBackVisibility(key) {
                     <div class="font-semibold text-lg">Front</div>
                 </template>
                 <div>
-                    <p v-if="hoveredQuestion">{{ hoveredQuestion.front }}</p>
+                    <p v-if="hoveredQuestion && questionKatexDict"
+                        v-html="questionKatexDict[hoveredQuestion.key]?.front || ''"></p>
                     <p v-else class="text-gray-400 italic">Najetím na otázku zobrazíš její front.</p>
                 </div>
             </UCard>
@@ -151,7 +255,8 @@ function toggleBackVisibility(key) {
                     <div class="font-semibold text-lg">Back</div>
                 </template>
                 <div>
-                    <p v-if="hoveredQuestion">{{ hoveredQuestion.back }}</p>
+                    <p v-if="hoveredQuestion && questionKatexDict"
+                        v-html="questionKatexDict[hoveredQuestion.key]?.back || ''"></p>
                     <p v-else class="text-gray-400 italic">Najetím na otázku zobrazíš její back.</p>
                 </div>
             </UCard>
