@@ -1,11 +1,16 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { navigateTo } from '#app'; // Import pro Nuxt 3 navigaci
+import { Decks } from "~/model/Decks"
 
 const deckModules = import.meta.glob('~/assets/decks/*.json', { eager: true });
 const decks = Object.values(deckModules).map((module) => module.default);
 const decksRef = ref([]);
 
+
+
+const _decks = new Decks;
+_decks.loadDecksFromPath('~/assets/decks/*.json');
 
 try {
   decksRef.value = Object.values(deckModules).map((module, index) => { 
