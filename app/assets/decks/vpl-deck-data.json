@@ -1,13 +1,13 @@
 {
   "deck": {
-    "id": "vpl-deck",
+    "id": "3",
     "name": "Výroková a predikátová logika",
     "tags": [
       "logika",
       "zkouška",
       "vygenerováno"
     ],
-    "questions": {
+    "cards": {
       "p1": {
         "front": "Model ve výrokové logice",
         "back": "Model jazyka je určité pravdivostní ohodnocení proměnných.",

@@ -1,57 +1,49 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import { navigateTo } from '#app'; // Import pro Nuxt 3 navigaci
-import { Decks } from "~/model/Decks"
+import { ref, onMounted, onUnmounted } from 'vue'; // Added onUnmounted
+import { navigateTo } from '#app';
+// Removed local deck loading and Decks import
+// import { Decks } from "~/model/Decks"
+// const deckModules = import.meta.glob('~/assets/decks/*.json', { eager: true });
+// const decks = Object.values(deckModules).map((module) => module.default);
+// const decksRef = ref([]);
 
-const deckModules = import.meta.glob('~/assets/decks/*.json', { eager: true });
-const decks = Object.values(deckModules).map((module) => module.default);
-const decksRef = ref([]);
+import { useDecks } from '~/composables/useDecks'; // Import the shared state composable
 
+// Get the shared decks state
+const { decks } = useDecks(); // Use 'decks' directly from the composable
 
-
-const _decks = new Decks;
-_decks.loadDecksFromPath('~/assets/decks/*.json');
-
-try {
-  decksRef.value = Object.values(deckModules).map((module, index) => { 
-    const deckData = module.default?.deck;
-
-    if (!deckData || !deckData.id) {
-      console.warn(`Deck data or ID missing in one of the JSON files (module index: ${index}). Skipping.`);
-      return null;
-    }
-
-    return {
-      id: deckData.id,
-      name: deckData.name || 'Untitled Deck',
-      questions: deckData.questions || {}
-    };
-  }).filter(deck => deck !== null);
-
-} catch (error) {
-  console.error('Error processing loaded decks:', error);
-}
-
-console.log('Loaded decks:', decksRef.value);
-
+// Removed the try...catch block for local loading
 
 function increaseLevel(deckIndex, questionValueIndex) {
-  const deck = decksRef.value[deckIndex];
-  if (!deck || !deck.questions) return;
+  // Access the shared state using .value
+  const deck = decks.value[deckIndex];
+  if (!deck || !deck.cards) {
+    console.warn(`Deck or questions not found at index ${deckIndex}`);
+    return;
+  }
 
-  const questions = deck.questions;
-  const questionKeys = Object.keys(questions);
-  const questionKey = questionKeys[questionValueIndex];
+  const cards = deck.cards;
+  // Get keys to access the specific question by its original key, using the index from Object.values
+  const questionKeys = Object.keys(cards);
+  if (questionValueIndex < 0 || questionValueIndex >= questionKeys.length) {
+      console.warn(`Invalid questionValueIndex: ${questionValueIndex}`);
+      return;
+  }
+  const questionKey = questionKeys[questionValueIndex]; // Get key based on index
 
-
-  if (questionKey && questions[questionKey]) {
-    if (questions[questionKey].level === undefined) {
-      questions[questionKey].level = 0;
+  if (questionKey && cards[questionKey]) {
+    // Initialize level if undefined
+    if (cards[questionKey].level === undefined || cards[questionKey].level === null) {
+      cards[questionKey].level = 0;
     }
-    questions[questionKey].level = (questions[questionKey].level + 1) % 6;
-    console.log(`Increased level for question key ${questionKey} in deck ${deck.name} (ID: ${deck.id}) to ${questions[questionKey].level}`);
+    // Mutate the level directly on the shared state object
+    cards[questionKey].level = (cards[questionKey].level + 1) % 6; // Cycle through 0-5
+    console.log(`Increased level for question key ${questionKey} in deck ${deck.name} (ID: ${deck.id}) to ${cards[questionKey].level}`);
+    decks.value = [...decks.value]; // Trigger reactivity (if needed)
+    // Note: Direct mutation is okay for simple cases with useState, but for complex logic,
+    // consider adding update functions to the useDecks composable.
   } else {
-    console.warn(`Question not found for deckIndex ${deckIndex} and questionValueIndex ${questionValueIndex}`);
+    console.warn(`Question not found for key ${questionKey} derived from index ${questionValueIndex}`);
   }
 }
 
@@ -61,25 +53,33 @@ function navigateToStudy(deckId) {
     return;
   }
   console.log(`Navigating to study deck with id: ${deckId}`);
-  navigateTo(`/decks/${deckId}`);
+  navigateTo(`/decks/${deckId}`); // Ensure this route exists
 }
 
+// Example keydown listener (consider if still needed)
 function keyDownAction(event) {
-  console.log(event.key);
+  console.log(`Key pressed: ${event.key}`);
+  // Add specific key handling logic here if required
 }
 
 function resetDeck(deckIndex) {
-  const deck = decksRef.value[deckIndex];
-  if (!deck || !deck.questions) {
+
+  // print all decks to console
+  console.log(decks.value);
+
+  // Access the shared state using .value
+  const deck = decks.value[deckIndex];
+  if (!deck || !deck.cards) {
     console.error(`Cannot reset deck: Deck not found at index ${deckIndex}`);
     return;
   }
   console.log(`Resetting levels for deck: ${deck.name} (ID: ${deck.id})`);
-  const questions = deck.questions;
+  const cards = deck.cards;
   let resetCount = 0;
-  Object.keys(questions).forEach(questionKey => {
-    if (questions[questionKey]) {
-      questions[questionKey].level = 0;
+  Object.keys(cards).forEach(questionKey => {
+    if (cards[questionKey]) {
+      // Mutate the level directly
+      cards[questionKey].level = 0;
       resetCount++;
     }
   });
@@ -87,41 +87,54 @@ function resetDeck(deckIndex) {
 }
 
 onMounted(() => {
+  // Add the keydown listener
+  
   window.addEventListener('keydown', keyDownAction);
-})
+});
+
+onUnmounted(() => {
+  // Clean up the listener when the component is destroyed
+  window.removeEventListener('keydown', keyDownAction);
+});
 
 </script>
 
 <template>
   <div class="p-6">
-    <div v-for="(deck, deckIndex) in decksRef" :key="deck.id" class="mb-12">
-      <h1 class="text-2xl font-bold mb-4">{{ deck.name }}</h1>
+    <!-- Iterate over the shared 'decks' ref -->
+    <div v-for="(deck, deckIndex) in decks" :key="deck.id || deckIndex" class="mb-12"> <!-- Added fallback key -->
+      <h1 class="text-2xl font-bold mb-4">{{ deck.name || 'Untitled Deck' }}</h1>
 
       <div class="flex space-x-2 mb-4">
         <UButton icon="i-lucide-book-marked" size="sm" color="primary" variant="solid"
+          :disabled="!deck.id"
           @click="navigateToStudy(deck.id)">
           Study
         </UButton>
 
         <UButton icon="i-lucide-rotate-ccw" size="sm" color="neutral" variant="outline" @click="resetDeck(deckIndex)">
-          Reset
+          Reset Levels
         </UButton>
       </div>
 
-      <UCard v-if="Object.keys(deck.questions).length > 0" class="mb-4">
+      <!-- Check if questions exist and is an object with keys -->
+      <UCard v-if="deck.cards && typeof deck.cards === 'object' && Object.keys(deck.cards).length > 0" class="mb-4">
         <div class="heatmap-container">
-          <div v-for="(question, questionValueIndex) in Object.values(deck.questions)" :key="questionValueIndex"
-            class="heatmap-cell" :class="`heat-${question.level === undefined ? 0 : question.level}`"
-            :title="question.front || 'No question text available'"
+          <!-- Iterate over question *values*. Use index as key if question itself lacks unique ID -->
+          <div v-for="(question, questionValueIndex) in Object.values(deck.cards)" :key="questionValueIndex"
+            class="heatmap-cell"
+            :class="`heat-${question.level === undefined || question.level === null ? 0 : question.level}`"
+            :title="`${Object.keys(deck.cards)[questionValueIndex]}: ${question.front || 'No front text'}\nLevel: ${question.level === undefined || question.level === null ? 0 : question.level}`"
             @click="increaseLevel(deckIndex, questionValueIndex)" />
         </div>
       </UCard>
       <div v-else class="text-gray-500 italic mb-4">
-        No questions found in this deck.
+        No questions found in this deck or questions data is invalid.
       </div>
     </div>
-    <div v-if="decksRef.length === 0" class="text-center text-gray-600">
-      No decks loaded. Check the console for errors.
+    <!-- Check the shared 'decks' ref for length -->
+    <div v-if="!decks || decks.length === 0" class="text-center text-gray-600 mt-8">
+      No decks loaded. Please log in via Dropbox in the navigation bar.
     </div>
   </div>
 </template>
@@ -132,44 +145,41 @@ onMounted(() => {
   grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
   gap: 4px;
   width: 100%;
+  padding: 5px; /* Add some padding inside the card */
 }
 
 .heatmap-cell {
   width: 20px;
   height: 20px;
-  border-radius: 2px;
+  border-radius: 3px; /* Slightly more rounded */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
   cursor: pointer;
   transition: transform 0.1s ease, background-color 0.2s ease;
-  user-select: none;
+  user-select: none; /* Prevent text selection on click */
+  display: flex; /* For potential future content inside cell */
+  align-items: center;
+  justify-content: center;
 }
 
 .heatmap-cell:hover {
-  transform: scale(1.2);
+  transform: scale(1.15); /* Slightly larger hover effect */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  z-index: 1; /* Ensure hovered cell is on top */
 }
 
-/* Barvy zůstávají stejné */
-.heat-0 {
-  background-color: #ebedf0;
-}
+/* Heatmap Colors (GitHub-like) */
+.heat-0 { background-color: #ebedf0; } /* Default/Level 0 */
+.heat-1 { background-color: #9be9a8; } /* Level 1 */
+.heat-2 { background-color: #40c463; } /* Level 2 */
+.heat-3 { background-color: #30a14e; } /* Level 3 */
+.heat-4 { background-color: #216e39; } /* Level 4 */
+.heat-5 { background-color: #16442a; } /* Level 5 */
 
-/* GitHub-like šedá pro 0 */
-.heat-1 {
-  background-color: #9be9a8;
+/* Add styles for buttons if needed */
+.flex.space-x-2 > * {
+  margin-right: 0.5rem; /* Ensure spacing works */
 }
-
-.heat-2 {
-  background-color: #40c463;
-}
-
-.heat-3 {
-  background-color: #30a14e;
-}
-
-.heat-4 {
-  background-color: #216e39;
-}
-
-.heat-5 {
-  background-color: #16442a;
+.flex.space-x-2 > *:last-child {
+  margin-right: 0;
 }
 </style>

@@ -1,13 +1,13 @@
 {
   "deck": {
-    "id": "generated-deck",
+    "id": "2",
     "name": "Sample Generated Deck",
     "tags": [
       "generated",
       "test",
       "demo"
     ],
-    "questions": {
+    "cards": {
       "q1": {
         "front": "What is the answer to question 1?",
         "back": "The answer to question 1 is 2.",

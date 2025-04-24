@@ -13,6 +13,12 @@ export default defineNuxtConfig({
     },
   },
 
+  runtimeConfig: {
+    public: {
+      dropboxAppKey: process.env.DROPBOX_APP_KEY || 'key-not-found',
+    }
+  },
+
   modules: [
     '@nuxt/ui',
     '@nuxt/eslint',

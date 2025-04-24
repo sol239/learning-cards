@@ -1,75 +1,67 @@
-# Nuxt UI Starter
+# Nuxt Cards
 
-Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui.nuxt.com) to learn more.
+## Introduction
 
-## Setup
+Nuxt Cards is a Nuxt module that provides a set of pre-designed card components for use in your Nuxt applications. It allows you to easily create visually appealing cards with various styles and layouts.
 
-Make sure to install the dependencies:
+### JSON
 
-```bash
-# npm
-npm install
+Schema>
 
-# pnpm
-pnpm install
+```json
+{
+  "type": "object",
+  "properties": {
+    "deck": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the deck"
+        },
 
-# yarn
-yarn install
-
-# bun
-bun install
+        "filename": {
+          "type": "string",
+          "description": "File name of the deck"
+        },
+        ,
+        "name": {
+          "type": "string",
+          "description": "Name of the deck"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the deck"
+        },
+        "cards": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "front": {
+                "type": "string",
+                "description": "Front side of the card"
+              },
+              "back": {
+                "type": "string",
+                "description": "Back side of the card"
+              }
+            },
+            "required": ["front", "back"]
+          },
+          "description": "Collection of cards in the deck"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Tags associated with the deck"
+        }
+      },
+      "required": ["id", "name", "cards"]
+    }
+  },
+  "required": ["deck"]
+}
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

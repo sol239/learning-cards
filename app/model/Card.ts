@@ -1,8 +1,8 @@
 
 export class Card {
     private id: number;
-    private name: string;
+    private level: number;
+    private tags: string[];
     private front: string;
     private back: string;
-
 }
