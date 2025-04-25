@@ -12,56 +12,52 @@ Schema>
 {
   "type": "object",
   "properties": {
-    "deck": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the deck"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the deck"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the deck"
+    },
+    "filename": {
+      "type": "string",
+      "description": "File name of the deck"
+    },
+    "cards": {
       "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Unique identifier for the deck"
-        },
-
-        "filename": {
-          "type": "string",
-          "description": "File name of the deck"
-        },
-        ,
-        "name": {
-          "type": "string",
-          "description": "Name of the deck"
-        },
-        "description": {
-          "type": "string",
-          "description": "Description of the deck"
-        },
-        "cards": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "object",
-            "properties": {
-              "front": {
-                "type": "string",
-                "description": "Front side of the card"
-              },
-              "back": {
-                "type": "string",
-                "description": "Back side of the card"
-              }
-            },
-            "required": ["front", "back"]
+      "description": "Collection of cards in the deck",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "front": {
+            "type": "string",
+            "description": "Front side of the card"
           },
-          "description": "Collection of cards in the deck"
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
+          "back": {
+            "type": "string",
+            "description": "Back side of the card"
           },
-          "description": "Tags associated with the deck"
-        }
-      },
-      "required": ["id", "name", "cards"]
+          "level": {
+            "type": "integer",
+            "description": "Card's learning level or progress indicator"
+          }
+        },
+        "required": ["front", "back", "level"]
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Tags associated with the deck",
+      "items": {
+        "type": "string"
+      }
     }
   },
-  "required": ["deck"]
+  "required": ["id", "name", "cards"]
 }
 ```

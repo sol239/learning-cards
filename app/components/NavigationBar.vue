@@ -150,8 +150,6 @@ onMounted(() => {
         <span class="text-sm text-gray-500">Dropbox Connected</span>
         <UButton icon="i-heroicons-arrow-left-on-rectangle" @click="handleLogout" variant="ghost" color="red"
           aria-label="Logout Dropbox" />
-        <UButton icon="i-heroicons-arrow-left-on-rectangle" label="Print files" @click="printFiles"
-          variant="ghost" class="ml-2" />
       </div>
 
 

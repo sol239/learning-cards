@@ -14,6 +14,8 @@ export class Deck {
 
     private description: string;
 
+    private filename: string;
+
     private cards: Card[];
 
     /**
@@ -22,10 +24,11 @@ export class Deck {
      */
     private tags: string[];
 
-    constructor(id: string, name: string, description: string, cards: Card[], tags: string[]) {
+    constructor(id: string, name: string, description: string, filename: string, cards: Card[], tags: string[]) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.filename = filename;
         this.cards = cards;
         this.tags = tags;
     }
@@ -71,7 +74,16 @@ export class Deck {
         return this.tags;
     }
 
+    public setFilename(filename: string): void {
+        this.filename = filename;
+    }
+
+    public getFilename(): string {
+        return this.filename;
+    }
+
+
     public toString(): string {
-        return `- id=${this.id}\n - name=${this.name}\n - description=${this.description}\n - cards=[${this.cards.map(card => card.toString()).join(", ")}]\n - tags=[${this.tags.join(", ")}]\n]`;
+        return `- id=${this.id}\n - name=${this.name}\n - description=${this.description}\n - filename=${this.filename}\n - cards=[${this.cards.map(card => card.toString()).join(", ")}]\n - tags=[${this.tags.join(", ")}]\n]`;
     }
 }

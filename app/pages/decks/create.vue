@@ -8,6 +8,11 @@
                 <!-- Deck Name -->
                 <UFormItem label="Deck Name" name="name" required> <!-- Added name="name" for validation -->
                     <UInput v-model="deckRef.name" placeholder="Enter the name of the deck" required />
+                </UFormItem>    
+
+                <!-- filename-->
+                <UFormItem label="File Name" name="filename" required> <!-- Added name="name" for validation -->
+                    <UInput v-model="deckRef.filename" placeholder="Enter the filename of the deck" required />
                 </UFormItem>
 
                 <!-- Deck Description -->
@@ -27,10 +32,12 @@
 <script setup>
 import { reactive } from "vue";
 import { Deck } from "~/model/Deck";
+import { DropboxHandler } from "~/model/Dropbox";
 
 const deckRef = reactive({
     name: "",
     description: "",
+    filename: ""
 });
 
 function handleSubmit() {
@@ -43,21 +50,30 @@ function handleSubmit() {
 
     const id = Date.now().toString(); // Generate a simple unique ID
 
+    deckRef.filename = deckRef.filename + ".json"; // Append .json to the filename
+
     // Create a new Deck instance (assuming Deck class exists)
-    const deck = new Deck(id, deckRef.name, deckRef.description, [], []);
+    const deck = new Deck(id, deckRef.name, deckRef.description, deckRef.filename  ,[], []);
     console.log("Deck to be created:\n", deck.toString());
 
 
     // Reset the form after successful submission
     deckRef.name = "";
     deckRef.description = "";
+    deckRef.filename = "";
+
+    const dh = new DropboxHandler();
+    dh.saveDeckToDropbox(deck).then(() => {
+        console.log("Deck saved to Dropbox successfully.");
+    }).catch((error) => {
+        console.error("Error saving deck to Dropbox:", error);
+        const toast = useToast()
+        toast.add({ title: 'Error', description: 'Failed to save deck to Dropbox.', color: 'red' })
+    });
 
     // Optionally provide success feedback
     const toast = useToast()
     toast.add({ title: 'Success', description: 'Deck created!', color: 'green' })
 
-    // Optionally navigate away
-    // const router = useRouter()
-    // router.push('/decks');
 }
 </script>

@@ -2,6 +2,7 @@
     "deck" : {
         "id": "1",
         "name": "Java",
+        "filename": "java-deck-data.json",
         "description": "Pokročilé porgramování v jazyce Java",
         "cards": {
             "p1": {

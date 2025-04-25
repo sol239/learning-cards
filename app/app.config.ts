@@ -4,6 +4,8 @@ export default defineAppConfig({
     colors: {
       primary: 'emerald',
       neutral: 'slate',
+      secondary: 'rose',
+      delete: 'rose',
     },
     button: {
       defaultVariants: {

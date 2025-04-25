@@ -7,10 +7,11 @@ import { navigateTo } from '#app';
 // const decks = Object.values(deckModules).map((module) => module.default);
 // const decksRef = ref([]);
 
-import { useDecks } from '~/composables/useDecks'; // Import the shared state composable
+import { DropboxHandler } from '~/model/Dropbox';
 
-// Get the shared decks state
+import { useDecks } from '~/composables/useDecks'; // Import the shared state composable
 const { decks } = useDecks(); // Use 'decks' directly from the composable
+
 
 // Removed the try...catch block for local loading
 
@@ -26,8 +27,8 @@ function increaseLevel(deckIndex, questionValueIndex) {
   // Get keys to access the specific question by its original key, using the index from Object.values
   const questionKeys = Object.keys(cards);
   if (questionValueIndex < 0 || questionValueIndex >= questionKeys.length) {
-      console.warn(`Invalid questionValueIndex: ${questionValueIndex}`);
-      return;
+    console.warn(`Invalid questionValueIndex: ${questionValueIndex}`);
+    return;
   }
   const questionKey = questionKeys[questionValueIndex]; // Get key based on index
 
@@ -41,6 +42,15 @@ function increaseLevel(deckIndex, questionValueIndex) {
     console.log(`Increased level for question key ${questionKey} in deck ${deck.name} (ID: ${deck.id}) to ${cards[questionKey].level}`);
     decks.value = [...decks.value]; // Trigger reactivity (if needed)
     // Note: Direct mutation is okay for simple cases with useState, but for complex logic,
+    const dh = new DropboxHandler(); // Initialize DropboxHandler
+
+    dh.saveDeckToDropbox(deck).then(() => {
+      console.log(`Deck ${deck.name} saved successfully after level increase.`);
+    }).catch((error) => {
+      console.error(`Error saving deck ${deck.name}:`, error);
+    });
+
+
     // consider adding update functions to the useDecks composable.
   } else {
     console.warn(`Question not found for key ${questionKey} derived from index ${questionValueIndex}`);
@@ -54,6 +64,11 @@ function navigateToStudy(deckId) {
   }
   console.log(`Navigating to study deck with id: ${deckId}`);
   navigateTo(`/decks/${deckId}`); // Ensure this route exists
+}
+
+function navigateToCreateDeck() {
+  console.log("Navigating to create deck page.");
+  navigateTo('/decks/create');
 }
 
 // Example keydown listener (consider if still needed)
@@ -83,12 +98,54 @@ function resetDeck(deckIndex) {
       resetCount++;
     }
   });
+
+  const dh = new DropboxHandler(); // Initialize DropboxHandler
+
+  dh.saveDeckToDropbox(deck).then(() => {
+    console.log(`Deck ${deck.name} saved successfully after reset.`);
+  }).catch((error) => {
+    console.error(`Error saving deck ${deck.name}:`, error);
+  });
+
   console.log(`Levels reset for ${resetCount} questions in deck: ${deck.name}`);
+}
+
+async function confirmDelete(deckIndex) {
+  const deck = decks.value[deckIndex];
+  if (!deck) {
+    console.error(`Cannot delete deck: Deck not found at index ${deckIndex}`);
+    return;
+  }
+
+  // Use the browser's confirm dialog
+  const confirmed = window.confirm(`Are you sure you want to delete the deck "${deck.name || 'Untitled Deck'}"? This action cannot be undone.`);
+
+  if (confirmed) {
+    console.log(`Attempting to delete deck: ${deck.name} (ID: ${deck.id})`);
+    try {
+      const dh = new DropboxHandler();
+      // Assuming DropboxHandler has a deleteDeckFromDropbox method
+      // You might need to implement this method in your DropboxHandler class
+      await dh.deleteDeckFromDropbox(deck); // Pass the whole deck or just the ID/filename
+      console.log(`Deck ${deck.name} deleted successfully from Dropbox.`);
+
+      // Remove the deck from the local state
+      decks.value.splice(deckIndex, 1);
+      console.log(`Deck ${deck.name} removed from local state.`);
+
+    } catch (error) {
+      console.error(`Error deleting deck ${deck.name}:`, error);
+      // Optionally, show an error message to the user
+      alert(`Failed to delete deck "${deck.name}". Please check the console for details.`);
+    }
+  } else {
+    console.log(`Deletion cancelled for deck: ${deck.name}`);
+  }
 }
 
 onMounted(() => {
   // Add the keydown listener
-  
+
   window.addEventListener('keydown', keyDownAction);
 });
 
@@ -100,20 +157,33 @@ onUnmounted(() => {
 </script>
 
 <template>
+
+
+
   <div class="p-6">
+    <div class="flex space-x-2 mb-6">
+      <UButton icon="i-lucide-plus" size="sm" color="primary" variant="solid" aria-label="Create New Deck" @click="navigateToCreateDeck"></UButton>
+      <UButton icon="i-lucide-upload" size="sm" color="primary" variant="outline" aria-label="Import Deck"></UButton> 
+      <UButton icon="i-lucide-settings" size="sm" color="gray" variant="ghost" aria-label="Settings"></UButton> 
+    </div>
+    
     <!-- Iterate over the shared 'decks' ref -->
     <div v-for="(deck, deckIndex) in decks" :key="deck.id || deckIndex" class="mb-12"> <!-- Added fallback key -->
       <h1 class="text-2xl font-bold mb-4">{{ deck.name || 'Untitled Deck' }}</h1>
 
       <div class="flex space-x-2 mb-4">
-        <UButton icon="i-lucide-book-marked" size="sm" color="primary" variant="solid"
-          :disabled="!deck.id"
+        <UButton icon="i-lucide-book-marked" size="sm" color="primary" variant="solid" :disabled="!deck.id"
           @click="navigateToStudy(deck.id)">
           Study
         </UButton>
 
         <UButton icon="i-lucide-rotate-ccw" size="sm" color="neutral" variant="outline" @click="resetDeck(deckIndex)">
           Reset Levels
+        </UButton>
+
+        <UButton icon="i-lucide-trash-2" size="sm" color="secondary" variant="outline"
+          @click="confirmDelete(deckIndex)">
+          Delete
         </UButton>
       </div>
 
@@ -145,41 +215,75 @@ onUnmounted(() => {
   grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
   gap: 4px;
   width: 100%;
-  padding: 5px; /* Add some padding inside the card */
+  padding: 5px;
+  /* Add some padding inside the card */
 }
 
 .heatmap-cell {
   width: 20px;
   height: 20px;
-  border-radius: 3px; /* Slightly more rounded */
-  border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+  border-radius: 3px;
+  /* Slightly more rounded */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  /* Subtle border */
   cursor: pointer;
   transition: transform 0.1s ease, background-color 0.2s ease;
-  user-select: none; /* Prevent text selection on click */
-  display: flex; /* For potential future content inside cell */
+  user-select: none;
+  /* Prevent text selection on click */
+  display: flex;
+  /* For potential future content inside cell */
   align-items: center;
   justify-content: center;
 }
 
 .heatmap-cell:hover {
-  transform: scale(1.15); /* Slightly larger hover effect */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-  z-index: 1; /* Ensure hovered cell is on top */
+  transform: scale(1.15);
+  /* Slightly larger hover effect */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  /* Add shadow on hover */
+  z-index: 1;
+  /* Ensure hovered cell is on top */
 }
 
 /* Heatmap Colors (GitHub-like) */
-.heat-0 { background-color: #ebedf0; } /* Default/Level 0 */
-.heat-1 { background-color: #9be9a8; } /* Level 1 */
-.heat-2 { background-color: #40c463; } /* Level 2 */
-.heat-3 { background-color: #30a14e; } /* Level 3 */
-.heat-4 { background-color: #216e39; } /* Level 4 */
-.heat-5 { background-color: #16442a; } /* Level 5 */
+.heat-0 {
+  background-color: #ebedf0;
+}
+
+/* Default/Level 0 */
+.heat-1 {
+  background-color: #9be9a8;
+}
+
+/* Level 1 */
+.heat-2 {
+  background-color: #40c463;
+}
+
+/* Level 2 */
+.heat-3 {
+  background-color: #30a14e;
+}
+
+/* Level 3 */
+.heat-4 {
+  background-color: #216e39;
+}
+
+/* Level 4 */
+.heat-5 {
+  background-color: #16442a;
+}
+
+/* Level 5 */
 
 /* Add styles for buttons if needed */
-.flex.space-x-2 > * {
-  margin-right: 0.5rem; /* Ensure spacing works */
+.flex.space-x-2>* {
+  margin-right: 0.5rem;
+  /* Ensure spacing works */
 }
-.flex.space-x-2 > *:last-child {
+
+.flex.space-x-2>*:last-child {
   margin-right: 0;
 }
 </style>

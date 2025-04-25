@@ -2,6 +2,7 @@
   "deck": {
     "id": "2",
     "name": "Sample Generated Deck",
+    "filename": "mock-01-data.json",
     "tags": [
       "generated",
       "test",

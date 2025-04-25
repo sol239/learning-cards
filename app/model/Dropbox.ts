@@ -1,5 +1,6 @@
 import type { Card } from "./Card";
 import { Deck } from "./Deck";
+import { Dropbox } from 'dropbox';
 
 export class DropboxHandler {
     private DROPBOX_AUTH_URL: string = 'https://www.dropbox.com/oauth2/authorize';
@@ -149,6 +150,45 @@ export class DropboxHandler {
         return response.text(); // Changed from response.json() to response.text()
     }
 
+    async saveDeckToDropbox(deck: Deck, folderPath: string = ''): Promise<void> {
+        const jsonContent = JSON.stringify(deck, null, 2); 
+        const fileName = `${deck.getFilename()}`; 
+        const filePath = `${folderPath}/${fileName}`; // Ensure the path is correct
+
+        const dbx = new Dropbox({ accessToken: this.accessToken ?? undefined });
+
+        const fileBlob = new Blob([jsonContent], { type: 'application/json' });
+        try {
+            const response = await dbx.filesUpload({
+              path: filePath,
+              contents: fileBlob,
+              mode: { '.tag': 'overwrite' }, // Overwrite if exists
+            });
+        
+            console.log('Deck uploaded successfully:', response);
+          } catch (error) {
+            console.error('Error uploading deck:', error);
+          }
+    
+    }
+
+    async deleteDeckFromDropbox(deck: Deck, folderPath: string = ''): Promise<void> {
+        const fileName = deck.getFilename();
+        const filePath = `${folderPath}/${fileName}`;
+    
+        const dbx = new Dropbox({ accessToken: this.accessToken ?? undefined });
+    
+        try {
+            const response = await dbx.filesDeleteV2({ path: filePath });
+            console.log(`Deck "${deck.getName()}" deleted successfully:`, response);
+        } catch (error) {
+            console.error(`Error deleting deck "${deck.getName()}":`, error);
+        }
+    }
+    
+                            
+
+
     // ...existing code...
 
     /**
@@ -184,8 +224,7 @@ export class DropboxHandler {
                     const content = JSON.parse(fileContentText);
 
                     // Check if the expected 'deck' property exists
-                    if (content && content.deck) {
-                        const deckData = content.deck; // Access the nested deck object
+                    if (content) {
 
 
                         // TODO: Verify Deck constructor signature.
@@ -193,12 +232,15 @@ export class DropboxHandler {
                         // Assuming 'questions' should map to 'cards' for now.
                         // Also, 'description' is missing in the provided JSON structure.
                         const deck = new Deck(
-                            deckData.id,
-                            deckData.name,
-                            deckData.description, // This might be undefined if not in JSON
-                            deckData.cards,   // Using 'questions' from JSON for 'cards' parameter
-                            deckData.tags
+                            content.id,
+                            content.name,
+                            content.description, // This might be undefined if not in JSON
+                            content.filename, // Assuming filename is part of the JSON structure
+                            content.cards,   // Using 'questions' from JSON for 'cards' parameter
+                            content.tags
                         );
+
+                        console.log(`Deck: ${deck.getName()}`);
 
                         decks.push(deck); // Store the created deck object
 

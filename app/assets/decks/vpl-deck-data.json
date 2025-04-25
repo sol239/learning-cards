@@ -2,6 +2,7 @@
   "deck": {
     "id": "3",
     "name": "Výroková a predikátová logika",
+    "filename": "vpl-deck-data.json",
     "tags": [
       "logika",
       "zkouška",
