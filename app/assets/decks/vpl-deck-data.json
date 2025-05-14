@@ -1,860 +1,858 @@
 {
-  "deck": {
-    "id": "3",
-    "name": "Výroková a predikátová logika",
-    "filename": "vpl-deck-data.json",
-    "tags": [
-      "logika",
-      "zkouška",
-      "vygenerováno"
-    ],
-    "cards": {
-      "p1": {
-        "front": "Model ve výrokové logice",
-        "back": "Model jazyka je určité pravdivostní ohodnocení proměnných.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 1
-      },
-      "p2": {
-        "front": "Pravdivostní funkce výroku",
-        "back": "Pravdivostní funkce výroku přiřazuje konkrétnímu ohodnocení proměnných nulu nebo jedničku, definuje se induktivně pomocí binárních funkcí.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 2
-      },
-      "p3": {
-        "front": "Sémantické pojmy",
-        "back": "Pravdivost, lživost, nezávislost, splnitelnost v logice nebo vzhledem k teorii.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 3
-      },
-      "p4": {
-        "front": "Pravdivost",
-        "back": "Výrok je pravdivý, pokud platí v každém modelu (jazyka/teorie).\n- Je pravdivý v logice = platí v logice = je tautologie\n- Je pravdivý v T = platí v T = je důsledek T",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 4
-      },
-      "p5": {
-        "front": "Lživost",
-        "back": "Výrok je lživý (sporný), pokud neplatí v žádném modelu.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 5
-      },
-      "p6": {
-        "front": "Nezávislost",
-        "back": "Výrok je nezávislý, pokud platí v nějakém modelu a neplatí v jiném modelu.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 6
-      },
-      "p7": {
-        "front": "Splnitelnost",
-        "back": "Výrok je splnitelný, pokud platí v nějakém modelu (tedy není lživý, je pravdivý nebo nezávislý).",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 7
-      },
-      "p8": {
-        "front": "V logice, vzhledem k teorii",
-        "back": "- V logice: výrok má danou vlastnost ve všech modelech jazyka\n- Vzhledem k teorii T: výrok má danou vlastnost ve všech modelech teorie T",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 8
-      },
-      "p9": {
-        "front": "Ekvivalence výroku",
-        "back": "Výroky jsou ekvivalentní, když se rovnají jejich množiny modelů.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 9
-      },
-      "p10": {
-        "front": "Ekvivalence výrokových teorií",
-        "back": "Výrokové teorie jsou ekvivalentní, když se rovnají jejich množiny modelů.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 10
-      },
-      "p11": {
-        "front": "T-ekvivalence",
-        "back": "Výroky/teorie jsou T-ekvivalentní, když se rovnají jejich množiny modelů vzhledem k teorii T.\n\n$\\varphi\\sim_T\\psi\\equiv M_\\mathbb P(T,\\varphi)=M_\\mathbb P(T,\\psi)$\n\nkde $M_\\mathbb P(T,\\varphi)\\equiv M_\\mathbb P(T\\cup\\set{\\varphi})$, což odpovídá $M_\\mathbb P(T)\\cap M_\\mathbb P(\\varphi)$",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 11
-      },
-      "p12": {
-        "front": "Sémantické pojmy o teorii",
-        "back": "Sporná, bezesporná, kompletní, splnitelná.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 12
-      },
-      "p13": {
-        "front": "Sporná",
-        "back": "Teorie je sporná, jestliže (ekvivalentně):\n- v ní platí spor\n- nemá žádný model\n- v ní platí všechny výroky",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 13
-      },
-      "p14": {
-        "front": "Bezesporná",
-        "back": "Teorie je bezesporná (splnitelná), pokud není sporná, tj. má nějaký model.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 14
-      },
-      "p15": {
-        "front": "Kompletní",
-        "back": "Teorie je kompletní jestliže není sporná a každý výrok (respektive sentence) je v ní pravdivý nebo lživý (tj. nemá žádné nezávislé výroky), ekvivalentně, pokud má právě jeden model (až na elementární ekvivalenci v predikátové logice).",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 15
-      },
-      "p16": {
-        "front": "Splnitelná",
-        "back": "Teorie je splnitelná, pokud má nějaký model (tj. je bezesporná).",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 16
-      },
-      "p17": {
-        "front": "Extenze teorie",
-        "back": "Extenze teorie $T$ je libovolná teorie $T'$ v jazyce $\\mathbb P'\\supseteq\\mathbb P$ splňující $\\text{Csq}_{\\mathbb P}(T)\\subseteq\\text{Csq}_{\\mathbb P'}(T')$\n\nkde $\\text{Csq}_\\mathbb P(T)$ je množina všech důsledků teorie (výroků/sentencí pravdivých v teorii $T$ v jazyce $\\mathbb P$)",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 17
-      },
-      "p18": {
-        "front": "Jednoduchá",
-        "back": "Extenze je jednoduchá, pokud $\\mathbb P'=\\mathbb P$ (jazyk zůstává stejný).\n\nSémanticky: $T'$ je jednoduchou extenzí $T$, právě když $\\mathbb P'=\\mathbb P$ a $M_\\mathbb P(T')\\subseteq M_\\mathbb P(T)$",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 18
-      },
-      "p19": {
-        "front": "Konzervativní",
-        "back": "Extenze je konzervativní, pokud $\\text{Csq}_{\\mathbb P}(T)=\\text{Csq}_{\\mathbb P}(T')=\\text{Csq}_{\\mathbb P'}(T')\\cap\\text{VF}_\\mathbb P$\n\nSémanticky: $T'$ je konzervativní extenzí $T$, pokud je extenzí a navíc platí, že každý model $T$ lze nějak expandovat na model $T'$",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 19
-      },
-      "p20": {
-        "front": "Odpovídající sémantická kritéria",
-        "back": "Sémantický význam extenzí (v řeči modelů):\n- $T'$ je jednoduchou extenzí $T$, právě když $\\mathbb P'=\\mathbb P$ a $M_\\mathbb P(T')\\subseteq M_\\mathbb P(T)$\n- $T'$ je extenzí $T$, právě když $M_{\\mathbb P'}(T')\\subseteq M_{\\mathbb P'}(T)$\n- $T'$ je konzervativní extenzí $T$, pokud je extenzí a navíc platí, že každý model $T$ lze nějak expandovat na model $T'$\n- $T'$ je extenzí $T$ a zároveň $T$ je extenzí $T'$, právě když $T'\\sim T$ (jazyky a množiny modelů se rovnají)\n- kompletní jednoduché extenze $T$ jednoznačně až na ekvivalenci odpovídají modelům $T$",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 20
-      },
-      "p21": {
-        "front": "Tablo z teorie",
-        "back": "Konečné tablo z teorie $T$ je uspořádaný, položkami označkovaný strom zkonstruovaný aplikací konečně mnoha pravidel:\n- Jednoprvkový strom označkovaný libovolnou položkou je tablo z teorie $T$.\n- Pro libovolnou položku $P$ na libovolné větvi $V$ můžeme na konec větve $V$ připojit atomické tablo pro položku $P$.\n- Na konec libovolné větve můžeme připojit položku $\\text T\\alpha$ pro libovolný axiom teorie $\\alpha\\in T$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 21
-      },
-      "p22": {
-        "front": "Tablo důkaz",
-        "back": "Tablo důkaz výroku $\\varphi$ z teorie $T$ je sporné tablo z teorie $T$ s položkou $\\text F\\varphi$ v kořeni.\n- Pokud existuje, je $\\varphi$ tablo dokazatelný z $T$, píšeme $T\\vdash\\varphi$.\n- Podobně definujeme tablo zamítnutí s $\\text T\\varphi$ v kořeni, tablo zamítnutelnost se značí $T\\vdash \\neg\\varphi$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 22
-      },
-      "p23": {
-        "front": "Kongruence struktury",
-        "back": "Kongruence struktury $\\mathcal A$ je ekvivalence $\\sim$ na množině $A$, která je kongruencí pro všechny funkce a relace $\\mathcal A$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 23
-      },
-      "p24": {
-        "front": "Faktorstruktura",
-        "back": "Faktorstruktura (podílová struktura) $\\mathcal A$ podle kongruence $\\sim$ je struktura $A/_\\sim$ v témž jazyce, jejíž univerzum je množina všech rozkladových tříd $A$ podle $\\sim$ a jejíž funkce a relace jsou definované pomocí reprezentantů.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 24
-      },
-      "p25": {
-        "front": "Axiomy rovnosti",
-        "back": "Axiomy rovnosti pro jazyk $L$ s rovností jsou:\n1. $x=x$\n2. $x_1=y_1\\land\\dots\\land x_n=y_n\\to f(x_1,\\dots,x_n)=f(y_1,\\dots,y_n)$ pro každý $n$-ární funkční symbol $f$.\n3. $x_1=y_1\\land\\cdots\\land x_n=y_n\\to \\left(R(x_1,\\dots,x_n)\\to R(y_1,\\dots,y_n)\\right)$ pro každý $n$-ární relační symbol $R$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 25
-      },
-      "p26": {
-        "front": "CNF a DNF",
-        "back": "Výrok je v konjunktivní normální formě (CNF), pokud je konjunkcí klauzulí. Výrok je v disjunktivní normální formě (DNF), pokud je disjunkcí elementárních konjunkcí.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 26
-      },
-      "p27": {
-        "front": "Hornův tvar",
-        "back": "Výrok je v Hornově tvaru, pokud je konjunkcí Hornovských klauzulí, tj. klauzulí obsahujících nejvýše jeden pozitivní literál.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 27
-      },
-      "p28": {
-        "front": "Množinová reprezentace CNF formule",
-        "back": "CNF formule je (konečná nebo nekonečná) množina klauzulí. Klauzule je konečná množina literálů, prázdnou klauzuli označíme $\\square$, není nikdy splněna.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 28
-      },
-      "p29": {
-        "front": "Splňující ohodnocení",
-        "back": "Ohodnocení $\\mathcal V$ splňuje formuli $S$, pokud $\\mathcal V$ obsahuje nějaký literál z každé klauzule v $S$, tj. $\\forall C\\in S:\\mathcal V\\cap C\\neq\\emptyset$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 29
-      },
-      "p30": {
-        "front": "Rezoluční pravidlo",
-        "back": "Rezoluční pravidlo ve výrokové logice:\n- Mějme klauzule $C_1,C_2$ a literál $\\ell$, přičemž $\\ell\\in C_1$ a $\\overline\\ell\\in C_2$.\n- Rezolventa klauzulí $C_1$ a $C_2$ přes literál $\\ell$ je klauzule $C=(C_1\\setminus\\set{\\ell})\\cup(C_2\\setminus\\set{\\overline\\ell})$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 30
-      },
-      "p31": {
-        "front": "(Nejobecnější) unifikace",
-        "back": "Unifikace $\\sigma$ pro množinu výrazů $S=\\set{E_1,\\dots,E_n}$ je substituce, která sjednocuje všechny výrazy v $S$, tj. $E_1\\sigma=E_2\\sigma=\\dots=E_n\\sigma$. Nejobecnější unifikace je taková, že každá jiná unifikace je její instancí.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 31
-      },
-      "p32": {
-        "front": "Rezoluční důkaz",
-        "back": "Rezoluční důkaz klauzule $C$ z formule $S$ je konečná posloupnost klauzulí $C_0,C_1,\\dots,C_n=C$, kde každá klauzule je buď z $S$, nebo je rezolventou předchozích klauzulí.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 32
-      },
-      "p33": {
-        "front": "Zamítnutí",
-        "back": "Rezoluční zamítnutí formule $S$ je rezoluční důkaz prázdné klauzule $\\square$ z $S$. Pokud existuje, je $S$ nesplnitelná.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 33
-      },
-      "p34": {
-        "front": "Signatura a jazyk predikátové logiky",
-        "back": "Signatura je dvojice $\\braket{\\mathcal {R,F}}$, kde $\\mathcal{R,F}$ jsou disjunktní množiny relačních a funkčních symbolů s danými aritami. Jazyk obsahuje proměnné, symboly ze signatury, logické spojky a kvantifikátory.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 34
-      },
-      "p35": {
-        "front": "Struktura daného jazyka",
-        "back": "Struktura v signatuře $\\braket{\\mathcal{R,F}}$ je trojice $\\mathcal A=\\braket{A,\\mathcal{R^A,F^A}}$, kde $A$ je doména, $\\mathcal{R^A}$ je množina interpretací relačních symbolů a $\\mathcal{F^A}$ je množina interpretací funkčních symbolů.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 35
-      },
-      "p36": {
-        "front": "Atomická formule",
-        "back": "Atomická formule jazyka $L$ je nápis $R(t_1,\\dots,t_n)$, kde $R$ je $n$-ární relační symbol a $t_i$ jsou termy.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 36
-      },
-      "p37": {
-        "front": "Formule",
-        "back": "Formule jazyka $L$ jsou konečné nápisy definované induktivně:\n- Atomická formule je formule.\n- Negace formule je formule.\n- Spojením dvou formulí logickou spojkou dostaneme formuli.\n- Přidáním kvantifikátoru před formuli dostaneme formuli.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 37
-      },
-      "p38": {
-        "front": "Sentence",
-        "back": "Sentence je uzavřená formule, která nemá žádnou volnou proměnnou.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 38
-      },
-      "p39": {
-        "front": "Otevřené formule",
-        "back": "Otevřená formule je formule, která obsahuje volné proměnné.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 39
-      },
-      "p40": {
-        "front": "Pravdivostní hodnota formule ve struktuře při ohodnocení",
-        "back": "Pravdivostní hodnota formule při ohodnocení je určena standardně:\n- Atomická formule je pravdivá, pokud odpovídající $n$-tice patří do interpretace relačního symbolu.\n- Logické spojky a kvantifikátory se vyhodnocují standardně.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 40
-      },
-      "p41": {
-        "front": "Platnost formule ve struktuře",
-        "back": "Formule $\\varphi$ je platná ve struktuře $\\mathcal{A}$, pokud je pravdivá při každém ohodnocení proměnných ve struktuře $\\mathcal{A}$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 41
-      },
-      "p42": {
-        "front": "Kompletní teorie v predikátové logice",
-        "back": "Teorie $T$ je kompletní, pokud pro každou formuli $\\varphi$ platí buď $T\\models\\varphi$, nebo $T\\models\\neg\\varphi$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 42
-      },
-      "p43": {
-        "front": "Elementární ekvivalence",
-        "back": "Struktury $\\mathcal{A}$ a $\\mathcal{B}$ jsou elementárně ekvivalentní, pokud platí $\\mathcal{A}\\models\\varphi \\iff \\mathcal{B}\\models\\varphi$ pro každou formuli $\\varphi$ jazyka.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 43
-      },
-      "p44": {
-        "front": "Podstruktura",
-        "back": "Struktura $\\mathcal{B}$ je podstruktura struktury $\\mathcal{A}$, pokud $B\\subseteq A$ a interpretace symbolů v $\\mathcal{B}$ odpovídají interpretacím v $\\mathcal{A}$ omezeným na $B$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 44
-      },
-      "p45": {
-        "front": "Generovaná podstruktura",
-        "back": "Generovaná podstruktura $\\mathcal{B}$ struktury $\\mathcal{A}$ je nejmenší podstruktura obsahující danou množinu prvků $X\\subseteq A$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 45
-      },
-      "p46": {
-        "front": "Expanze a redukt struktury",
-        "back": "Expanze struktury $\\mathcal{A}$ je struktura $\\mathcal{A}'$ s rozšířeným jazykem. Redukt struktury $\\mathcal{A}$ je struktura $\\mathcal{A}'$ s omezeným jazykem.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 46
-      },
-      "p47": {
-        "front": "Definovatelnost ve struktuře",
-        "back": "Množina $X\\subseteq A^n$ je definovatelná ve struktuře $\\mathcal{A}$, pokud existuje formule $\\varphi(x_1,\\dots,x_n)$ taková, že $X=\\set{(a_1,\\dots,a_n)\\in A^n\\mid \\mathcal{A}\\models\\varphi(a_1,\\dots,a_n)}$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 47
-      },
-      "p48": {
-        "front": "Extenze o definice",
-        "back": "Extenze teorie $T$ o definice je rozšíření jazyka o nové symboly, které jsou definovány pomocí existujících symbolů teorie $T$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 48
-      },
-      "p49": {
-        "front": "Prenexní normální forma",
-        "back": "Formule je v prenexní normální formě, pokud má tvar $Q_1x_1\\dots Q_nx_n\\psi$, kde $Q_i$ jsou kvantifikátory a $\\psi$ je kvantifikátorově volná formule.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 49
-      },
-      "p50": {
-        "front": "Skolemova varianta",
-        "back": "Skolemova varianta formule je ekvivalentní formule v prenexní normální formě, kde jsou všechny existenční kvantifikátory nahrazeny funkčními symboly (Skolemovými funkcemi).",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 50
-      },
-      "p51": {
-        "front": "Herbrandův model",
-        "back": "Herbrandův model je model, jehož doména je tvořena množinou všech termů jazyka a interpretace funkčních a relačních symbolů je dána syntakticky.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 51
-      },
-      "p52": {
-        "front": "Srovnání s kanonickým modelem",
-        "back": "Herbrandův model je specifický typ modelu, který se používá v důkazech splnitelnosti, zatímco kanonický model je obecný model odvozený z dokončeného tabla.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 52
-      },
-      "p53": {
-        "front": "Izomorfismus struktur",
-        "back": "Struktury $\\mathcal{A}$ a $\\mathcal{B}$ jsou izomorfní, pokud existuje bijekce $f:A\\to B$, která zachovává interpretace všech symbolů jazyka.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 53
-      },
-      "p54": {
-        "front": "ω-kategorická teorie",
-        "back": "Teorie $T$ je $\\omega$-kategorická, pokud má až na izomorfismus právě jeden spočetný model.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 54
-      },
-      "p55": {
-        "front": "Axiomatizovatelnost",
-        "back": "Teorie $T$ je axiomatizovatelná, pokud existuje množina axiomů $\\Sigma$, taková, že $T=\\text{Cn}(\\Sigma)$, kde $\\text{Cn}(\\Sigma)$ je množina všech důsledků $\\Sigma$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 55
-      },
-      "p56": {
-        "front": "Konečná axiomatizovatelnost",
-        "back": "Teorie $T$ je konečně axiomatizovatelná, pokud existuje konečná množina axiomů $\\Sigma$, taková, že $T=\\text{Cn}(\\Sigma)$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 56
-      },
-      "p57": {
-        "front": "Otevřená axiomatizovatelnost",
-        "back": "Teorie $T$ je otevřeně axiomatizovatelná, pokud existuje množina otevřených formulí $\\Sigma$, taková, že $T=\\text{Cn}(\\Sigma)$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 57
-      },
-      "p58": {
-        "front": "Rekurzivní axiomatizace",
-        "back": "Teorie $T$ je rekurzivně axiomatizovaná, pokud existuje rekurzivně spočetná množina axiomů $\\Sigma$, taková, že $T=\\text{Cn}(\\Sigma)$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 58
-      },
-      "p59": {
-        "front": "Rekurzivní axiomatizovatelnost",
-        "back": "Teorie $T$ je rekurzivně axiomatizovatelná, pokud existuje algoritmus, který rozhodne, zda daná formule patří do množiny axiomů teorie.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 59
-      },
-      "p60": {
-        "front": "Rekurzivně spočetná kompletace",
-        "back": "Teorie $T$ má rekurzivně spočetnou kompletaci, pokud existuje rekurzivně spočetná teorie $T'$, která je kompletní a $T\\subseteq T'$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 60
-      },
-      "p61": {
-        "front": "Rozhodnutelná teorie",
-        "back": "Teorie $T$ je rozhodnutelná, pokud existuje algoritmus, který pro každou formuli $\\varphi$ rozhodne, zda $T\\models\\varphi$.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 61
-      },
-      "p62": {
-        "front": "Částečně rozhodnutelná teorie",
-        "back": "Teorie $T$ je částečně rozhodnutelná, pokud existuje algoritmus, který pro každou formuli $\\varphi$ rozhodne, zda $T\\models\\varphi$, pokud $T\\models\\varphi$ platí.",
-        "tags": [
-          "pojem"
-        ],
-        "level": 2,
-        "id": 62
-      },
-      "l1": {
-        "front": "Množinu modelů nad konečným jazykem lze axiomatizovat výrokem v CNF, výrokem v DNF.",
-        "back": "- tvrzení\\n\\t- mějme konečný jazyk $\\mathbb P$ a libovolnou množinu modelů $M \\subseteq M_\\mathbb P$\\n\\t- potom existuje výrok $\\varphi_\\text{DNF}$ v DNF a výrok $\\varphi_\\text{CNF}$ v CNF takový, že $M = M_\\mathbb P(\\varphi_\\text{DNF}) = M_\\mathbb P(\\varphi_\\text{CNF})$\\n\\t- konkrétně\\n\\t\\t- $\\varphi_\\text{DNF} = \\bigvee_{v \\in M} \\bigwedge_{p \\in \\mathbb P} p^{v(p)}$\\n\\t\\t- $\\varphi_\\text{CNF} = \\bigwedge_{v \\in \\overline M} \\bigvee_{p \\in \\mathbb P} \\overline{p^{v(p)}}$\\n\\t- důkaz\\n\\t\\t- pro $\\varphi_\\text{DNF}$ jednoduché, každá elementární konjunkce popisuje jeden model\\n\\t\\t- stejný mechanismus se používá pro důkaz univerzálnosti $\\{ \\neg, \\land, \\lor \\}$\\n\\t\\t- výrok $\\varphi_\\text{CNF}$ je duální k výroku $\\varphi'_\\text{DNF}$ sestrojenému pro doplněk $M' = \\overline M$\\n\\t\\t- nebo můžeme dokázat přímo – každá klauzule zakazuje právě jeden nemodel",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 63
-      },
-      "l2": {
-        "front": "2-SAT, Algoritmus implikačního grafu, jeho korektnost.",
-        "back": "- výrok $\\varphi$ je v $k$-CNF, pokud je v CNF a každá klauzule má nejvýše $k$ literálů\\n\\t- $k$-SAT se ptá, zda je formule v $k$-CNF splnitelná\\n\\t- algoritmus implikačního grafu pro 2-SAT\\n\\t\\t- klauzuli $a\\lor b$ vyjádříme jako dvě implikace $\\overline a\\to b,\\;\\overline b\\to a$\\n\\t\\t- jednotkovou klauzuli $c$ zapíšeme jako $\\overline c\\to c$\\n\\t\\t- implikační graf $\\mathcal G_\\varphi$ je orientovaný graf, jehož vrcholy jsou všechny literály a hrany jsou dané implikacemi (viz výše)\\n\\t\\t- v grafu najdeme komponenty silné souvislosti\\n\\t\\t\\t- všechny literály v jedné komponentě musí být ohodnoceny stejně\\n\\t\\t- provedeme kontrakci komponent, dostaneme orientovaný acyklický graf $\\mathcal G^*_\\varphi$\\n\\t\\t\\t- postupujeme podle topologického uspořádání, vezmeme nejlevější neohodnocenou komponentu, ohodnotíme ji 0, opačnou komponentu ohodnotíme 1\\n\\t- algoritmus běží v lineárním čase, protože komponenty silné souvislosti i topologické uspořádání lze nalézt v čase $O(n+m)$\\n\\t- korektnost plyne z tvrzení, že *výrok je splnitelný, právě když žádná komponenta silné souvislosti neobsahuje dvojici opačných literálů*\\n\\t\\t- implikaci $\\implies$ lze nahlédnout obměnou\\n\\t\\t\\t- kdyby komponenta obsahovala dvojici opačných literálů, existovala by implikace $1\\to 0$\\n\\t\\t- opačná implikace\\n\\t\\t\\t- model jsme získali postupem uvedeným výše (pomocí topologického uspořádání grafu komponent)\\n\\t\\t\\t- kdyby v tomto modelu původní výrok neplatil, neplatila by některá z klauzulí\\n\\t\\t\\t- u jednotkových klauzulí máme hranu $\\overline c\\to c$ (stejná hrana je i na úrovni grafu komponent), tudíž jsme nutně ohodnotili $\\overline c$ dříve než $c$, tedy $c=1$\\n\\t\\t\\t- u 2-klauzulí máme dvě hrany a čtyři různé literály, dvě různé proměnné – jednu z nich jsme ohodnotili jako první, ta zaručí platnost klauzule\\n\\t\\t\\t- tedy všechny klauzule platí",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 64
-      },
-      "l3": {
-        "front": "Horn-SAT, Algoritmus jednotkové propagace, jeho korektnost.",
-        "back": "- výrok je hornovský, pokud je konjunkcí hornovských klauzulí, tj. klauzulí obsahujících nejvýše jeden pozitivní literál\\n\\t- algoritmus\\n\\t\\t- pokud $\\varphi$ obsahuje dvojici opačných jednotkových klauzulí, není splnitelný\\n\\t\\t- pokud $\\varphi$ neobsahuje žádnou jednotkovou klauzuli, je splnitelný, ohodnotíme všechny zbývající proměnné nulou\\n\\t\\t- pokud $\\varphi$ obsahuje jednotkovou klauzuli $\\ell$, ohodnotíme literál $\\ell$ hodnotou 1, provedeme jednotkovou propagaci a postup opakujeme\\n\\t- jednotková propagace pro $\\ell=1$\\n\\t\\t- každou klauzuli obsahující $\\ell$ odstraníme (protože je takto splněna)\\n\\t\\t- $\\overline\\ell$ odstraníme ze všech klauzulí, které ho obsahují (protože $\\overline\\ell$ nemůže zajistit splnění dané klauzule)\\n\\t- korektnost\\n\\t\\t- korektnost jednotkové propagace je popsána výše\\n\\t\\t- ohodnocení zbývajících proměnných nulou je zjevně korektní, neboť každá hornovská „nejednotková“ klauzule obsahuje negativní literál, který tak zajistí splnění klauzule\\n\\t- Horn-SAT lze řešit v lineárním čase\\n\\t\\t- kvadratický horní odhad lze nahlédnout tak, že v každém kroku výrok procházíme jednou a jednotková propagace ho vždy zkrátí",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 65
-      },
-      "l4": {
-        "front": "Vlastnosti extenze o definice.",
-        "back": "- je-li $T'$ extenze teorie $T$ o definice, potom platí:\\n\\t\\t- každý model teorie $T$ lze jednoznačně expandovat na model $T'\\n\\t\\t- $T'$ je konzervativní extenze $T$\\n\\t\\t- pro každou $L'$-formuli $\\varphi'$ existuje $L$-formule $\\varphi$ taková, že $T'\\models\\varphi'\\leftrightarrow\\varphi$\\n\\t- důkaz\\n\\t\\t- k expanzi modelu stačí přidat odpovídající relační a funkční symboly\\n\\t\\t- konzervativní extenze – vyplývá z tvrzení:\\n\\t\\t\\t- mějme jazyky $L\\subseteq L'$, teorii $T$ v $L$ a teorii $T'$ v $L'$\\n\\t\\t\\t- (i) $T'$ je extenzí $T$, právě když redukt každého modelu $T'$ na $L$ je modelem $T$\\n\\t\\t\\t\\t- důkaz $\\implies$\\n\\t\\t\\t\\t\\t- mějme $\\mathcal A'\\models T'$ a $\\mathcal A$, což je redukt $\\mathcal A'$ na jazyk $L$\\n\\t\\t\\t\\t\\t- $T'$ je extenzí $T$, takže v $T'$ platí každý axiom $\\varphi\\in T$\\n\\t\\t\\t\\t\\t- tudíž $\\mathcal A'\\models\\varphi$\\n\\t\\t\\t\\t\\t- proto i $\\mathcal A\\models\\varphi$, neboť $\\varphi$ obsahuje jen symboly z $L$\\n\\t\\t\\t\\t\\t- takže $\\mathcal A\\models T$\\n\\t\\t\\t\\t- důkaz $\\impliedby$\\n\\t\\t\\t\\t\\t- mějme $L$-sentenci $\\varphi$ takovou, že $T\\models\\varphi$\\n\\t\\t\\t\\t\\t- pro libovolný model $\\mathcal A'\\models T'$ víme, že jeho $L$-redukt $\\mathcal A$ je modelem $T$\\n\\t\\t\\t\\t\\t- tedy $\\mathcal A\\models\\varphi$\\n\\t\\t\\t\\t\\t- proto $\\mathcal A'\\models\\varphi$\\n\\t\\t\\t\\t\\t- tedy i $T'\\models\\varphi$\\n\\t\\t\\t- (ii) pokud je $T'$ extenzí $T$ a každý model $T$ lze expandovat do $L'$ na nějaký model $T'$, potom je $T'$ konzervativní extenzí $T$\\n\\t\\t\\t\\t- důkaz $\\implies$\\n\\t\\t\\t\\t\\t- vezměme libovolnou $L$-sentenci $\\varphi$, která platí v $T'$\\n\\t\\t\\t\\t\\t- každý model $\\mathcal A\\models T$ lze expandovat na nějaký model $\\mathcal A'\\models T'$\\n\\t\\t\\t\\t\\t- víme, že $\\mathcal A'\\models\\varphi$\\n\\t\\t\\t\\t\\t- takže i $\\mathcal A\\models\\varphi$\\n\\t\\t\\t\\t\\t- tudíž $T\\models\\varphi$\\n\\t\\t- $T'\\models\\varphi'\\leftrightarrow\\varphi$\\n\\t\\t\\t- pro relační symbol $R$\\n\\t\\t\\t\\t- v definici máme ekvivalenci $R\\leftrightarrow\\psi$\\n\\t\\t\\t\\t- $\\varphi$ vznikne tak, že nahradíme atomické podformule s novým symbolem $R$ formulí $\\psi'$, což je varianta $\\psi$ zaručující substituovatelnost všech termů\\n\\t\\t\\t\\t\\t- tedy $R(t_1,\\dots,t_n)$ nahradíme $\\psi'(x_1/t_1,\\dots,x_n/t_n)$\\n\\t\\t\\t\\t- substituovatelnost se dá zaručit třeba přejmenováním všech vázaných proměnných $\\psi$ na zcela nové\\n\\t\\t\\t- pro funkční symbol $f$\\n\\t\\t\\t\\t- v definici máme $f(x_1,\\dots,x_n)=y\\leftrightarrow\\psi(x_1,\\dots,x_n,y)$\\n\\t\\t\\t\\t- u více výskytů $f$ aplikujeme tento postup několikrát, v případě vnoření postupujeme od vnitřních\\n\\t\\t\\t\\t- jako $\\varphi^*$ označíme formuli vzniklou z $\\varphi'$ nahrazením termu $f(t_1,\\dots,t_n)$ novou proměnnou $z$\\n\\t\\t\\t\\t- $\\varphi$ dostaneme takto: $(\\exists z)(\\varphi^*\\land\\psi'(x_1/t_1,\\dots,x_n/t_n,y/z))$\\n\\t\\t\\t\\t- opět $\\psi'$ je varianta zaručující substituovatelnost\\n\\t\\t\\t\\t- díky této konstrukci a vlastnostem $T$ (axiomům jednoznačnosti a existence $z$) platí $T'\\models\\varphi'\\leftrightarrow\\varphi$",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 66
-      },
-      "l5": {
-        "front": "Vztah definovatelných množin a automorfismů.",
-        "back": "- tvrzení\\n\\t\\t- je-li $D\\subseteq A^n$ definovatelná ve struktuře $\\mathcal A$, potom pro každý automorfismus $h\\in\\text{Aut}(\\mathcal A)$ platí $h[D]=D$, kde $h[D]$ značí $\\set{h(\\overline a)\\mid\\overline a\\in D}$\\n\\t\\t- je-li $D$ definovatelná s parametry $\\overline b$, platí totéž pro automorfismy identické na $\\overline b$, tj. takové, že $h(\\overline b)=\\overline b$ (neboli $\\forall i:h(b_i)=b_i$)\\n\\t- důkaz (pro verzi s parametry)\\n\\t\\t- nechť $D=\\varphi^{\\mathcal A,\\overline b}(\\overline x,\\overline y)$\\n\\t\\t- potom pro každé $\\overline a \\in A^n$ platí\\n\\t\\t\\t- $\\overline a\\in D$\\n\\t\\t\\t- $\\iff\\mathcal A\\models\\varphi[e(\\overline x/\\overline a,\\overline y/\\overline b)]$\\n\\t\\t\\t- $\\iff\\mathcal A\\models\\varphi[(e\\circ h)(\\overline x/\\overline a,\\overline y/\\overline b)]$\\n\\t\\t\\t\\t- protože to je izomorfismus\\n\\t\\t\\t- $\\iff\\mathcal A\\models\\varphi[e(\\overline x/h(\\overline a),\\overline y/h(\\overline b))]$\\n\\t\\t\\t- $\\iff\\mathcal A\\models\\varphi[e(\\overline x/h(\\overline a),\\overline y/\\overline b)]$\\n\\t\\t\\t\\t- protože na $\\overline b$ je v tomhle automorfismu identita (z předpokladů tvrzení)\\n\\t\\t\\t- $\\iff h(\\overline a)\\in D$",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 67
-      },
-      "l6": {
-        "front": "Tablo metoda v jazyce s rovností.",
-        "back": "- chceme, aby v nějakém modelu $\\mathcal A$ teorie $T$ v jazyce s rovností byla relace $=^\\mathcal A$ kongruencí\\n\\t\\t- toho docílíme tak, že k teorii $T$ přidáme axiomy rovnosti – tablo sestavíme z výsledné teorie $T^*$\\n\\t- kongruence nám ale nestačí, chceme, aby rovnost byla identita, proto budeme všechny $=^\\mathcal A$-ekvivalentní prvky „identifikovat“ do jednoho\\n\\t\\t- tak vznikne faktorstruktura podle kongruence $=^\\mathcal A$\\n\\t- definice\\n\\t\\t- je-li $T$ teorie v jazyce $L$ s rovností, potom označme jako $T^*$ rozšíření teorie $T$ o generální uzávěry axiomů rovnosti pro jazyk $L$\\n\\t\\t- tablo důkaz z teorie $T$ je tablo důkaz z $T^*$, podobně pro tablo zamítnutí (a obecně jakékoliv tablo)\\n\\t- pozorování: jestliže $\\mathcal A\\models T^*$, potom platí i $\\mathcal A/_{=^\\mathcal A}\\models T^*$",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 68
-      },
-      "l7": {
-        "front": "Věta o kompaktnosti a její aplikace.",
-        "back": "- věta: teorie má model, právě když každá její konečná část má model\\n\\t- důkaz\\n\\t\\t- $\\implies:$ model teorie je zřejmě modelem každé její části\\n\\t\\t- $\\impliedby$ obměnou, chceme: pokud $T$ nemá model, existuje její konečná část, která nemá model\\n\\t\\t\\t- pokud $T$ nemá model, je sporná, tedy $T\\vdash\\bot$\\n\\t\\t\\t- vezměme nějaký konečný tablo důkaz $\\bot$ z $T$\\n\\t\\t\\t\\t- podle věty o konečnosti sporu\\n\\t\\t\\t- k jeho konstrukci stačí konečně mnoho axiomů $T$\\n\\t\\t\\t- ty tvoří konečnou podteorii $T'\\subseteq T$, která nemá model\\n\\t- aplikace\\n\\t\\t- popíšeme požadovanou vlastnost nekonečného objektu pomocí (nekonečné) výrokové teorie\\n\\t\\t- z konečné části teorie sestrojíme konečný podobjekt mající danou vlastnost\\n\\t- příklad\\n\\t\\t- spočetně nekonečný graf je bipartitní $\\iff$ každý jeho konečný podgraf je bipartitní\\n\\t\\t\\t- $T=\\set{p_u\\to\\neg p_v\\mid\\set{u,v}\\in E(G)}$",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 69
-      },
-      "l8": {
-        "front": "Věta o korektnosti rezoluce ve výrokové logice.",
-        "back": "- věta: je-li formule $S$ rezolucí zamítnutelná, potom je $S$ nesplnitelná\\n\\t- důkaz\\n\\t\\t- nechť $S\\vdash_R\\square$ a vezměme nějaký rezoluční důkaz $C_0,C_1,\\dots,C_n=\\square$\\n\\t\\t- předpokládejme pro spor, že $S$ je splnitelná\\n\\t\\t- tedy $\\mathcal V\\models S$ pro nějaké ohodnocení $\\mathcal V$\\n\\t\\t- indukcí podle $i$ dokážeme, že $\\mathcal V\\models C_i$\\n\\t\\t- pro $i=0$ to platí, neboť $C_0\\in S$\\n\\t\\t- pro $i\\gt 0$ máme dva případy\\n\\t\\t\\t- $C_i\\in S$, potom $\\mathcal V\\models C_i$ plyne z předpokladu, že $\\mathcal V\\models S$\\n\\t\\t\\t- $C_i$ je rezolventou nějakých dvou předchozích klauzulí, pro obě z nich z indukčního předpokladu platí, že ohodnocení $\\mathcal V$ je splňuje, takže $\\mathcal V\\models C_i$ plyne z korektnosti rezolučního pravidla\\n\\t\\t- indukcí dojdeme k tomu, že $\\mathcal V\\models\\square$, což je spor",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 70
-      },
-      "l9": {
-        "front": "Věta o korektnosti rezoluce v predikátové logice.",
-        "back": "- korektnost rezolučního pravidla\\n\\t\\t- v klauzuli $C_1$ jsou mj. výrazy $A_1,\\dots,A_n$\\n\\t\\t- v klauzuli $C_2$ jsou mj. výrazy $\\neg B_1,\\dots,\\neg B_m$\\n\\t\\t- množina výrazů $S=\\set{A_1,\\dots,A_n,B_1,\\dots,B_m}$ má nejobecnější unifikaci $\\sigma$ takovou, že $S\\sigma=\\set{A_1\\sigma}$\\n\\t\\t- $C_1,C_2$ jsou otevřené formule platné v $\\mathcal A$, takže platí i jejich instance po substituci, proto $\\mathcal A\\vDash C_1\\sigma$ a $\\mathcal A\\vDash C_2\\sigma$\\n\\t\\t- pokud $\\mathcal A\\vDash A_1\\sigma[e]$, potom $\\mathcal A\\nvDash\\neg A_1\\sigma [e]$ a musí být $\\mathcal A\\vDash C_2'\\sigma[e]$\\n\\t\\t\\t- kde $C'_2$ je část formule bez negací $B_i$\\n\\t\\t- tedy $\\mathcal A\\vDash C[e]$\\n\\t\\t- podobně to funguje i naopak – pokud $\\mathcal A\\nvDash A_1\\sigma[e]$\\n\\t- věta: pokud je CNF formule $S$ rezolucí zamítnutelná, potom je nesplnitelná\\n\\t- důkaz\\n\\t\\t- víme, že $S\\vdash_R\\square$, vezměme tedy nějaký rezoluční důkaz $\\square$ z $S$\\n\\t\\t- kdyby existoval model $\\mathcal A\\models S$, díky korektnosti rezolučního pravidla bychom mohli dokázat indukcí podle délky důkazu, že i $\\mathcal A\\models\\square$, což ale není možné",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 71
-      },
-      "l10": {
-        "front": "Souvislost stromu dosažení a splnitelnosti CNF formule.",
-        "back": "\\t- lemma: $S$ je splnitelná, právě když je splnitelná $S^\\ell$ nebo $S^{\\overline{\\ell}}$\\n\\t- důkaz lemmatu\\n\\t\\t- $\\implies$\\n\\t\\t\\t- mějme ohodnocení $\\mathcal V\\models S$\\n\\t\\t\\t- to nemůže obsahovat $\\ell$ i $\\overline\\ell$ (musí být konzistentní)\\n\\t\\t\\t- BÚNO $\\overline\\ell\\notin\\mathcal V$\\n\\t\\t\\t- vezmeme klauzuli v $S^\\ell$, ta je ve tvaru $C\\setminus\\set{\\overline\\ell}$ pro klauzuli $C\\in S$ neobsahující $\\ell$\\n\\t\\t\\t- víme, že $\\mathcal V\\models C$\\n\\t\\t\\t- $\\mathcal V$ neobsahuje $\\overline\\ell$, takže $\\mathcal V$ splnilo nějaký jiný literál $C$, takže platí i $\\mathcal V\\models C\\setminus\\set{\\overline\\ell}$\\n\\t\\t- $\\impliedby$\\n\\t\\t\\t- BÚNO existuje $\\mathcal V\\models S^\\ell$\\n\\t\\t\\t- $\\overline\\ell$ se nevyskytuje v $S^\\ell$, takže platí $\\mathcal V\\setminus\\set{\\overline\\ell}\\models S^\\ell$\\n\\t\\t\\t- ohodnocení $\\mathcal V'=(\\mathcal V\\setminus\\set{\\overline\\ell})\\cup\\set{\\ell}$ splňuje každou $C\\in S$\\n\\t\\t\\t\\t- pokud $\\ell\\in C$, klauzule je splněna díky $\\ell$ v $\\mathcal V'$\\n\\t\\t\\t\\t- pokud $\\ell\\notin C$, pak $\\mathcal V\\setminus\\set{\\overline\\ell}\\models C\\setminus\\set{\\overline\\ell}\\in S^\\ell$\\n\\t- tvrzení: formule $S$ (nad spočetným jazykem) je nesplnitelná, právě když každá větev stromu dosazení obsahuje prázdnou klauzuli $\\square$\\n\\t- důkaz tvrzení\\n\\t\\t- pro konečnou formuli lze dokázat indukcí podle počtu proměnných pomocí lemmatu\\n\\t\\t- pro nekonečnou formuli\\n\\t\\t\\t- je-li $S$ nekonečná a splnitelná, potom má splňující ohodnocení\\n\\t\\t\\t- to se shoduje s odpovídající nekonečnou větví ve stromu dosazení\\n\\t\\t\\t- je-li $S$ nekonečná a nesplnitelná, potom podle věty o kompaktnosti existuje nesplnitelná konečná část $S'\\subseteq S$\\n\\t\\t\\t- po dosazení pro všechny proměnné bude v každé větvi $\\square$ (po konečně mnoha krocích)",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 72
-      },
-      "l11": {
-        "front": "Nestandardní model přirozených čísel.",
-        "back": "\\t- nechť $\\underline{\\mathbb N}=\\braket{\\mathbb N,S,+,\\cdot,0,\\leq}$ je standardní model přirozených čísel\\n\\t- označme $\\text{Th}(\\underline{\\mathbb N})$ množinu všech sentencí pravdivých v $\\underline{\\mathbb N}$ (tzv. teorii struktury $\\underline{\\mathbb N}$)\\n\\t- pro $n\\in\\mathbb N$ definujme $n$-tý numerál jako term $\\underline n=S(S(\\dots S(0)\\dots))$, kde $S$ je aplikováno $n$-krát\\n\\t- vezměme nový konstantní symbol $c$ a vyjádřeme, že je ostře větší než každý $n$-tý numerál: $T=\\text{Th}(\\underline{\\mathbb N})\\cup\\set{\\underline n\\lt c\\mid n\\in\\mathbb N}$\\n\\t- každá konečná část $T$ má model\\n\\t- podle věty kompaktnosti má i $T$ model, říkáme mu nestandardní model\\n\\t- platí v něm tytéž sentence, jako ve standardním modelu, ale zároveň obsahuje prvek $c^\\mathcal A$, který je větší než každé $n\\in\\mathbb N$",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 73
-      },
-      "l12": {
-        "front": "Existence spočetného algebraicky uzavřeného tělesa.",
-        "back": "\\t- těleso je algebraicky uzavřené, pokud každý polynom nenulového stupně v něm má kořen\\n\\t- nespočetné těleso $\\mathbb C$ je algebraicky uzavřené ($\\mathbb R,\\mathbb Q$ nejsou)\\n\\t- algebraickou uzavřenost pro každé $n\\gt 0$ vyjádříme sentencí $\\psi_n=(\\forall x_{n-1})\\dots(\\forall x_0)(\\exists y)(y^n+x_{n-1}\\cdot y^{n-1}+\\dots+x_1\\cdot y+x_0)=0$\\n\\t\\t- kde $y^k$ je zkratka za term $\\underbrace{y\\cdot y\\cdot\\ldots\\cdot y}_{k}$\\n\\t\\t- $y$ tady odpovídá hledanému kořenu polynomu (obvykle se označuje jako $x$), naopak $x_i$ odpovídají koeficientům\\n\\t- z Löwenheim-Skolemovy věty s rovností vyplývá důsledek, že ke každé nekonečné $L$-struktuře (kde $L$ je spočetný jazyk s rovností) existuje elementárně ekvivalentní spočetně nekonečná struktura\\n\\t- tedy existuje spočetně nekonečná struktura $\\mathcal A$ elementárně ekvivalentní tělesu $\\mathbb C$\\n\\t- $\\mathbb C$ je těleso a $\\forall n\\gt 0:\\mathbb C\\models\\psi_n\\implies\\mathcal A$ je algebraicky uzavřené těleso",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 74
-      },
-      "l13": {
-        "front": "Tělesa charakteristiky 0 nejsou konečně axiomatizovatelná.",
-        "back": "- těleso charakteristiky 0 … sečtením prvočíselného počtu jedniček nikdy nedostanu nulu\\n\\t\\t- $T$ … teorie těles\\n\\t\\t- $T_0$ … teorie axiomatizující třídu těles charakteristiky 0\\n\\t\\t- $T_0=T\\cup\\set{\\neg p1=0\\mid p \\text{ je prvo\\v{c}íslo}}\\n\\t\\t\\t- $p1$ … $\\underbrace{1+1+\\dots+1}_p$\\n\\t- tvrzení: třída $K$ těles charakteristiky 0 není konečně axiomatizovatelná\\n\\t- důkaz\\n\\t\\t- podle věty o konečné axiomatizovatelnosti stačí ukázat, že $\\overline K$ (tělesa nenulové charakteristiky a netělesa) není axiomatizovatelná\\n\\t\\t- sporem: $\\overline K=M(S)$\\n\\t\\t- potom $S'=S\\cup T_0$ má model, neboť každá konečná část má model\\n\\t\\t\\t- pro konečné části $S$ jednoduché\\n\\t\\t\\t- pro konečné části $T_0$ vezmeme těleso prvočíselné charakteristiky větší než jakékoliv $p$ z axiomu $T_0$ tvaru $\\neg p1=0$\\n\\t\\t- nechť $\\mathcal A$ je model $S'$\\n\\t\\t- potom je i modelem $S$, takže $\\mathcal A\\in\\overline K$\\n\\t\\t- zároveň je ale modelem $T_0$, takže $\\mathcal A\\in K$, což je spor",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 75
-      },
-      "l14": {
-        "front": "Kritérium otevřené axiomatizovatelnosti.",
-        "back": "\\t- pozorování: je-li $\\mathcal B\\subseteq\\mathcal A$, potom pro každou otevřenou formuli $\\varphi$ a ohodnocení $e:\\text{Var}\\to B$ platí $\\mathcal B\\models\\varphi[e]\\iff\\mathcal A\\models\\varphi[e]$\\n\\t\\t- protože prvky z $B$ jsou i v $A$\\n\\t\\t- lze dokázat indukcí podle struktury formule\\n\\t- tvrzení: je-li $T$ otevřeně axiomatizovatelná, potom je každá podstruktura modelu $T$ také modelem $T$\\n\\t- důkaz\\n\\t\\t- buď $T'$ otevřená axiomatizace $T$, $\\mathcal A$ model $T'$, $\\mathcal {B\\subseteq A}$\\n\\t\\t- pro každou $\\varphi\\in T'$ platí $\\mathcal B\\models\\varphi$ ($\\varphi$ je otevřená, použijeme pozorování)\\n\\t\\t- tedy i $\\mathcal B\\models T'$\\n\\t- příklady\\n\\t\\t- DeLO není otevřeně axiomatizovatelná – konečná podstruktura nemůže být hustá\\n\\t\\t- teorie těles není otevřeně axiomatizovatelná – podstruktura $\\mathbb Z$ nemá inverzní prvek k 2 vůči násobení",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 76
-      },
-      "l15": {
-        "front": "Rekurzivně axiomatizovaná teorie je částečně rozhodnutelná, kompletní je rozhodnutelná.",
-        "back": "\\t- tvrzení: je-li $T$ rekurzivně axiomatizovaná, potom je částečně rozhodnutelná, je-li navíc kompletní, je rozhodnutelná\\n\\t- důkaz\\n\\t\\t- rekurzivní axiomatizovanost → částečná rozhodnutelnost\\n\\t\\t\\t- algoritmus konstruuje systematické tablo z $T$ pro $\\text F\\varphi$\\n\\t\\t\\t- pokud $T\\vDash\\varphi$, konstrukce skončí v konečně mno\\tha krocích\\n\\t\\t\\t- jinak konstrukce nemusí skončit\\n\\t\\t- rekurzivní axiomatizovanost & kompletnost → rozhodnutelnost\\n\\t\\t\\t- z kompletnosti plyne, že buď $T\\vdash\\varphi$ nebo $T\\vdash\\neg\\varphi$\\n\\t\\t\\t- algoritmus současně konstruuje tablo pro $\\text F\\varphi$ a tablo pro $\\text T\\varphi$\\n\\t\\t\\t- jedna z konstrukcí po konečně mnoha krocích skončí",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 77
-      },
-      "l16": {
-        "front": "Teorie konečné struktury v konečném jazyce s rovností je rozhodnutelná.",
-        "back": "\\t- tvrzení: je-li $\\mathcal A$ konečná struktura v konečném jazyce s rovností, potom je teorie $\\text{Th}(\\mathcal A)$ rekurzivně axiomatizovatelná\\n\\t- důkaz\\n\\t\\t- očíslujme prvku domény jako $A=\\set{a_1,\\dots,a_n}$\\n\\t\\t- $\\text{Th}(\\mathcal A)$ lze axiomatizovat sentencí, která je tvaru „existuje právě $n$ prvků $a_1,\\dots,a_n$ splňujících právě ty základní vztahy o funkčních hodnotách a relacích, které platí v $\\mathcal A$“\\n\\t- $\\text{Th}(\\mathcal A)$ (množina všech $L$-sentencí platných v $\\mathcal A$) je zjevně kompletní (podle pozorování 9.1.3)\\n\\t- rekurzivní axiomatizovanost & kompletnost → rozhodnutelnost",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 78
-      },
-      "l17": {
-        "front": "Gödelovy věty o neúplnosti a jejich důsledky (bez důkazů).",
-        "back": "- První věta o neúplnosti: Pro každou bezespornou rekurzivně axiomatizovanou extenzi $T$ Robinsonovy aritmetiky existuje sentence, která je pravdivá v $\\underline{\\mathbb N}$, ale není dokazatelná v $T$.\\n\\t- důsledek 1.1: je-li $T$ rekurzivně axiomatizovaná extenze Robinsonovy aritmetiky a je-li navíc $\\underline{\\mathbb N}$ modelem teorie $T$, potom $T$ není kompletní\\n\\t\\t- pro sentenci, která není dokazatelná v $T$, nemůže být dokazatelná ani její negace (byl by to spor s její pravdivostí v $\\underline{\\mathbb N}$)\\n\\t- důsledek 1.2: teorie $\\text{Th}(\\underline{\\mathbb N})$ není rekurzivně axiomatizovatelná\\n\\t\\t- kdyby byla, nemohla by být kompletní – ale ona kompletní je\\n\\t- věta (Rosserův trik): v každé bezesporné rekurzivně axiomatizované extenzi Robinsonovy aritmetiky existuje nezávislá sentence – tedy taková není kompletní\\n\\t\\t- v podstatě plyne z důsledku 1.1, jen se zbavuje $\\underline{\\mathbb N}$ \\n\\t- Druhá věta o neúplnosti: Pro každou bezespornou rekurzivně axiomatizovanou extenzi $T$ Peanovy aritmetiky platí, že $\\mathit{Con_T}$ není dokazatelná v $T$.\\n\\t- $\\mathit{Con_T}$ … sentence vyjadřující bezespornost (konzistence) teorie $T$\\n\\t\\t- $\\mathit{Con_T}=\\neg(\\exists y)\\mathit{Prf_{T}}(\\underline{0=S(0)},y)$\\n\\t\\t- $\\mathit{Prf_{T}}(x,y)$ … $y$ je důkaz $x$ v $T$\\n\\t- důsledek 2.1: existuje model Peanovy aritmetiky (PA), ve kterém platí sentence $(\\exists y)\\mathit{Prf_{PA}}(\\underline{0=S(0)},y)$\\n\\t- důsledek 2.2: existuje bezesporná rekurzivně axiomatizovaná extenze $T$ Peanovy aritmetiky, která dokazuje svou spornost, tj. taková, že $T\\vdash\\neg \\mathit{Con_T}$\\n\\t- důsledek 2.3: je-li teorie množin ZFC bezesporná, nemůže být sentence $\\mathit{Con_{ZFC}}$ v teorii ZFC dokazatelná",
-        "tags": [
-          "lehká"
-        ],
-        "level": 0,
-        "id": 79
-      },
-      "t1": {
-        "front": "Věta o korektnosti tablo metody ve výrokové logice.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 80
-      },
-      "t2": {
-        "front": "Věta o korektnosti tablo metody v predikátové logice.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 81
-      },
-      "t3": {
-        "front": "Věta o úplnosti tablo metody ve výrokové logice.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 82
-      },
-      "t4": {
-        "front": "Věta o úplnosti tablo metody v predikátové logice.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 83
-      },
-      "t5": {
-        "front": "Věta o konečnosti sporu, důsledky o konečnosti a systematičnosti důkazů.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 84
-      },
-      "t6": {
-        "front": "Věta o úplnosti rezoluce ve výrokové logice.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 85
-      },
-      "t7": {
-        "front": "Věta o úplnosti rezoluce v predikátové logice (Lifting lemma stačí vyslovit).",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 86
-      },
-      "t8": {
-        "front": "Skolemova věta.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 87
-      },
-      "t9": {
-        "front": "Herbrandova věta.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 88
-      },
-      "t10": {
-        "front": "Löwenheim-Skolemova věta včetně varianty s rovností, jejich důsledky.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 89
-      },
-      "t11": {
-        "front": "Vztah izomorfismu a elementární ekvivalence.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 90
-      },
-      "t12": {
-        "front": "ω-kategorické kritérium kompletnosti.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 91
-      },
-      "t13": {
-        "front": "Neaxiomatizovatelnost konečných modelů.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 92
-      },
-      "t14": {
-        "front": "Věta o konečné axiomatizovatelnosti.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 93
-      },
-      "t15": {
-        "front": "Rekurzivně axiomatizovaná teorie s rekurzivně spočetnou kompletací je rozhodnutelná.",
-        "back": "",
-        "tags": [
-          "těžká"
-        ],
-        "level": 0,
-        "id": 94
-      }
+  "id": "3",
+  "name": "Výroková a predikátová logika",
+  "filename": "vpl-deck-data.json",
+  "cards": {
+    "p1": {
+      "front": "Model ve výrokové logice",
+      "back": "Model jazyka je určité pravdivostní ohodnocení proměnných.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 1
+    },
+    "p2": {
+      "front": "Pravdivostní funkce výroku",
+      "back": "Pravdivostní funkce výroku přiřazuje konkrétnímu ohodnocení proměnných nulu nebo jedničku, definuje se induktivně pomocí binárních funkcí.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 2
+    },
+    "p3": {
+      "front": "Sémantické pojmy",
+      "back": "Pravdivost, lživost, nezávislost, splnitelnost v logice nebo vzhledem k teorii.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 3
+    },
+    "p4": {
+      "front": "Pravdivost",
+      "back": "Výrok je pravdivý, pokud platí v každém modelu (jazyka/teorie).\n- Je pravdivý v logice = platí v logice = je tautologie\n- Je pravdivý v T = platí v T = je důsledek T",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 4
+    },
+    "p5": {
+      "front": "Lživost",
+      "back": "Výrok je lživý (sporný), pokud neplatí v žádném modelu.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 5
+    },
+    "p6": {
+      "front": "Nezávislost",
+      "back": "Výrok je nezávislý, pokud platí v nějakém modelu a neplatí v jiném modelu.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 6
+    },
+    "p7": {
+      "front": "Splnitelnost",
+      "back": "Výrok je splnitelný, pokud platí v nějakém modelu (tedy není lživý, je pravdivý nebo nezávislý).",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 7
+    },
+    "p8": {
+      "front": "V logice, vzhledem k teorii",
+      "back": "- V logice: výrok má danou vlastnost ve všech modelech jazyka\n- Vzhledem k teorii T: výrok má danou vlastnost ve všech modelech teorie T",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 8
+    },
+    "p9": {
+      "front": "Ekvivalence výroku",
+      "back": "Výroky jsou ekvivalentní, když se rovnají jejich množiny modelů.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 9
+    },
+    "p10": {
+      "front": "Ekvivalence výrokových teorií",
+      "back": "Výrokové teorie jsou ekvivalentní, když se rovnají jejich množiny modelů.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 10
+    },
+    "p11": {
+      "front": "T-ekvivalence",
+      "back": "Výroky/teorie jsou T-ekvivalentní, když se rovnají jejich množiny modelů vzhledem k teorii T.\n\n$\\varphi\\sim_T\\psi\\equiv M_\\mathbb P(T,\\varphi)=M_\\mathbb P(T,\\psi)$\n\nkde $M_\\mathbb P(T,\\varphi)\\equiv M_\\mathbb P(T\\cup\\set{\\varphi})$, což odpovídá $M_\\mathbb P(T)\\cap M_\\mathbb P(\\varphi)$",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 11
+    },
+    "p12": {
+      "front": "Sémantické pojmy o teorii",
+      "back": "Sporná, bezesporná, kompletní, splnitelná.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 12
+    },
+    "p13": {
+      "front": "Sporná",
+      "back": "Teorie je sporná, jestliže (ekvivalentně):\n- v ní platí spor\n- nemá žádný model\n- v ní platí všechny výroky",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 13
+    },
+    "p14": {
+      "front": "Bezesporná",
+      "back": "Teorie je bezesporná (splnitelná), pokud není sporná, tj. má nějaký model.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 14
+    },
+    "p15": {
+      "front": "Kompletní",
+      "back": "Teorie je kompletní jestliže není sporná a každý výrok (respektive sentence) je v ní pravdivý nebo lživý (tj. nemá žádné nezávislé výroky), ekvivalentně, pokud má právě jeden model (až na elementární ekvivalenci v predikátové logice).",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 15
+    },
+    "p16": {
+      "front": "Splnitelná",
+      "back": "Teorie je splnitelná, pokud má nějaký model (tj. je bezesporná).",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 16
+    },
+    "p17": {
+      "front": "Extenze teorie",
+      "back": "Extenze teorie $T$ je libovolná teorie $T'$ v jazyce $\\mathbb P'\\supseteq\\mathbb P$ splňující $\\text{Csq}_{\\mathbb P}(T)\\subseteq\\text{Csq}_{\\mathbb P'}(T')$\n\nkde $\\text{Csq}_\\mathbb P(T)$ je množina všech důsledků teorie (výroků/sentencí pravdivých v teorii $T$ v jazyce $\\mathbb P$)",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 17
+    },
+    "p18": {
+      "front": "Jednoduchá",
+      "back": "Extenze je jednoduchá, pokud $\\mathbb P'=\\mathbb P$ (jazyk zůstává stejný).\n\nSémanticky: $T'$ je jednoduchou extenzí $T$, právě když $\\mathbb P'=\\mathbb P$ a $M_\\mathbb P(T')\\subseteq M_\\mathbb P(T)$",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 18
+    },
+    "p19": {
+      "front": "Konzervativní",
+      "back": "Extenze je konzervativní, pokud $\\text{Csq}_{\\mathbb P}(T)=\\text{Csq}_{\\mathbb P}(T')=\\text{Csq}_{\\mathbb P'}(T')\\cap\\text{VF}_\\mathbb P$\n\nSémanticky: $T'$ je konzervativní extenzí $T$, pokud je extenzí a navíc platí, že každý model $T$ lze nějak expandovat na model $T'$",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 19
+    },
+    "p20": {
+      "front": "Odpovídající sémantická kritéria",
+      "back": "Sémantický význam extenzí (v řeči modelů):\n- $T'$ je jednoduchou extenzí $T$, právě když $\\mathbb P'=\\mathbb P$ a $M_\\mathbb P(T')\\subseteq M_\\mathbb P(T)$\n- $T'$ je extenzí $T$, právě když $M_{\\mathbb P'}(T')\\subseteq M_{\\mathbb P'}(T)$\n- $T'$ je konzervativní extenzí $T$, pokud je extenzí a navíc platí, že každý model $T$ lze nějak expandovat na model $T'$\n- $T'$ je extenzí $T$ a zároveň $T$ je extenzí $T'$, právě když $T'\\sim T$ (jazyky a množiny modelů se rovnají)\n- kompletní jednoduché extenze $T$ jednoznačně až na ekvivalenci odpovídají modelům $T$",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 20
+    },
+    "p21": {
+      "front": "Tablo z teorie",
+      "back": "Konečné tablo z teorie $T$ je uspořádaný, položkami označkovaný strom zkonstruovaný aplikací konečně mnoha pravidel:\n- Jednoprvkový strom označkovaný libovolnou položkou je tablo z teorie $T$.\n- Pro libovolnou položku $P$ na libovolné větvi $V$ můžeme na konec větve $V$ připojit atomické tablo pro položku $P$.\n- Na konec libovolné větve můžeme připojit položku $\\text T\\alpha$ pro libovolný axiom teorie $\\alpha\\in T$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 21
+    },
+    "p22": {
+      "front": "Tablo důkaz",
+      "back": "Tablo důkaz výroku $\\varphi$ z teorie $T$ je sporné tablo z teorie $T$ s položkou $\\text F\\varphi$ v kořeni.\n- Pokud existuje, je $\\varphi$ tablo dokazatelný z $T$, píšeme $T\\vdash\\varphi$.\n- Podobně definujeme tablo zamítnutí s $\\text T\\varphi$ v kořeni, tablo zamítnutelnost se značí $T\\vdash \\neg\\varphi$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 22
+    },
+    "p23": {
+      "front": "Kongruence struktury",
+      "back": "Kongruence struktury $\\mathcal A$ je ekvivalence $\\sim$ na množině $A$, která je kongruencí pro všechny funkce a relace $\\mathcal A$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 23
+    },
+    "p24": {
+      "front": "Faktorstruktura",
+      "back": "Faktorstruktura (podílová struktura) $\\mathcal A$ podle kongruence $\\sim$ je struktura $A/_\\sim$ v témž jazyce, jejíž univerzum je množina všech rozkladových tříd $A$ podle $\\sim$ a jejíž funkce a relace jsou definované pomocí reprezentantů.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 24
+    },
+    "p25": {
+      "front": "Axiomy rovnosti",
+      "back": "Axiomy rovnosti pro jazyk $L$ s rovností jsou:\n1. $x=x$\n2. $x_1=y_1\\land\\dots\\land x_n=y_n\\to f(x_1,\\dots,x_n)=f(y_1,\\dots,y_n)$ pro každý $n$-ární funkční symbol $f$.\n3. $x_1=y_1\\land\\cdots\\land x_n=y_n\\to \\left(R(x_1,\\dots,x_n)\\to R(y_1,\\dots,y_n)\\right)$ pro každý $n$-ární relační symbol $R$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 25
+    },
+    "p26": {
+      "front": "CNF a DNF",
+      "back": "Výrok je v konjunktivní normální formě (CNF), pokud je konjunkcí klauzulí. Výrok je v disjunktivní normální formě (DNF), pokud je disjunkcí elementárních konjunkcí.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 26
+    },
+    "p27": {
+      "front": "Hornův tvar",
+      "back": "Výrok je v Hornově tvaru, pokud je konjunkcí Hornovských klauzulí, tj. klauzulí obsahujících nejvýše jeden pozitivní literál.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 27
+    },
+    "p28": {
+      "front": "Množinová reprezentace CNF formule",
+      "back": "CNF formule je (konečná nebo nekonečná) množina klauzulí. Klauzule je konečná množina literálů, prázdnou klauzuli označíme $\\square$, není nikdy splněna.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 28
+    },
+    "p29": {
+      "front": "Splňující ohodnocení",
+      "back": "Ohodnocení $\\mathcal V$ splňuje formuli $S$, pokud $\\mathcal V$ obsahuje nějaký literál z každé klauzule v $S$, tj. $\\forall C\\in S:\\mathcal V\\cap C\\neq\\emptyset$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 29
+    },
+    "p30": {
+      "front": "Rezoluční pravidlo",
+      "back": "Rezoluční pravidlo ve výrokové logice:\n- Mějme klauzule $C_1,C_2$ a literál $\\ell$, přičemž $\\ell\\in C_1$ a $\\overline\\ell\\in C_2$.\n- Rezolventa klauzulí $C_1$ a $C_2$ přes literál $\\ell$ je klauzule $C=(C_1\\setminus\\set{\\ell})\\cup(C_2\\setminus\\set{\\overline\\ell})$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 30
+    },
+    "p31": {
+      "front": "(Nejobecnější) unifikace",
+      "back": "Unifikace $\\sigma$ pro množinu výrazů $S=\\set{E_1,\\dots,E_n}$ je substituce, která sjednocuje všechny výrazy v $S$, tj. $E_1\\sigma=E_2\\sigma=\\dots=E_n\\sigma$. Nejobecnější unifikace je taková, že každá jiná unifikace je její instancí.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 31
+    },
+    "p32": {
+      "front": "Rezoluční důkaz",
+      "back": "Rezoluční důkaz klauzule $C$ z formule $S$ je konečná posloupnost klauzulí $C_0,C_1,\\dots,C_n=C$, kde každá klauzule je buď z $S$, nebo je rezolventou předchozích klauzulí.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 32
+    },
+    "p33": {
+      "front": "Zamítnutí",
+      "back": "Rezoluční zamítnutí formule $S$ je rezoluční důkaz prázdné klauzule $\\square$ z $S$. Pokud existuje, je $S$ nesplnitelná.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 33
+    },
+    "p34": {
+      "front": "Signatura a jazyk predikátové logiky",
+      "back": "Signatura je dvojice $\\braket{\\mathcal {R,F}}$, kde $\\mathcal{R,F}$ jsou disjunktní množiny relačních a funkčních symbolů s danými aritami. Jazyk obsahuje proměnné, symboly ze signatury, logické spojky a kvantifikátory.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 34
+    },
+    "p35": {
+      "front": "Struktura daného jazyka",
+      "back": "Struktura v signatuře $\\braket{\\mathcal{R,F}}$ je trojice $\\mathcal A=\\braket{A,\\mathcal{R^A,F^A}}$, kde $A$ je doména, $\\mathcal{R^A}$ je množina interpretací relačních symbolů a $\\mathcal{F^A}$ je množina interpretací funkčních symbolů.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 35
+    },
+    "p36": {
+      "front": "Atomická formule",
+      "back": "Atomická formule jazyka $L$ je nápis $R(t_1,\\dots,t_n)$, kde $R$ je $n$-ární relační symbol a $t_i$ jsou termy.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 36
+    },
+    "p37": {
+      "front": "Formule",
+      "back": "Formule jazyka $L$ jsou konečné nápisy definované induktivně:\n- Atomická formule je formule.\n- Negace formule je formule.\n- Spojením dvou formulí logickou spojkou dostaneme formuli.\n- Přidáním kvantifikátoru před formuli dostaneme formuli.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 37
+    },
+    "p38": {
+      "front": "Sentence",
+      "back": "Sentence je uzavřená formule, která nemá žádnou volnou proměnnou.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 38
+    },
+    "p39": {
+      "front": "Otevřené formule",
+      "back": "Otevřená formule je formule, která obsahuje volné proměnné.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 39
+    },
+    "p40": {
+      "front": "Pravdivostní hodnota formule ve struktuře při ohodnocení",
+      "back": "Pravdivostní hodnota formule při ohodnocení je určena standardně:\n- Atomická formule je pravdivá, pokud odpovídající $n$-tice patří do interpretace relačního symbolu.\n- Logické spojky a kvantifikátory se vyhodnocují standardně.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 40
+    },
+    "p41": {
+      "front": "Platnost formule ve struktuře",
+      "back": "Formule $\\varphi$ je platná ve struktuře $\\mathcal{A}$, pokud je pravdivá při každém ohodnocení proměnných ve struktuře $\\mathcal{A}$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 41
+    },
+    "p42": {
+      "front": "Kompletní teorie v predikátové logice",
+      "back": "Teorie $T$ je kompletní, pokud pro každou formuli $\\varphi$ platí buď $T\\models\\varphi$, nebo $T\\models\\neg\\varphi$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 42
+    },
+    "p43": {
+      "front": "Elementární ekvivalence",
+      "back": "Struktury $\\mathcal{A}$ a $\\mathcal{B}$ jsou elementárně ekvivalentní, pokud platí $\\mathcal{A}\\models\\varphi \\iff \\mathcal{B}\\models\\varphi$ pro každou formuli $\\varphi$ jazyka.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 43
+    },
+    "p44": {
+      "front": "Podstruktura",
+      "back": "Struktura $\\mathcal{B}$ je podstruktura struktury $\\mathcal{A}$, pokud $B\\subseteq A$ a interpretace symbolů v $\\mathcal{B}$ odpovídají interpretacím v $\\mathcal{A}$ omezeným na $B$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 44
+    },
+    "p45": {
+      "front": "Generovaná podstruktura",
+      "back": "Generovaná podstruktura $\\mathcal{B}$ struktury $\\mathcal{A}$ je nejmenší podstruktura obsahující danou množinu prvků $X\\subseteq A$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 45
+    },
+    "p46": {
+      "front": "Expanze a redukt struktury",
+      "back": "Expanze struktury $\\mathcal{A}$ je struktura $\\mathcal{A}'$ s rozšířeným jazykem. Redukt struktury $\\mathcal{A}$ je struktura $\\mathcal{A}'$ s omezeným jazykem.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 46
+    },
+    "p47": {
+      "front": "Definovatelnost ve struktuře",
+      "back": "Množina $X\\subseteq A^n$ je definovatelná ve struktuře $\\mathcal{A}$, pokud existuje formule $\\varphi(x_1,\\dots,x_n)$ taková, že $X=\\set{(a_1,\\dots,a_n)\\in A^n\\mid \\mathcal{A}\\models\\varphi(a_1,\\dots,a_n)}$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 47
+    },
+    "p48": {
+      "front": "Extenze o definice",
+      "back": "Extenze teorie $T$ o definice je rozšíření jazyka o nové symboly, které jsou definovány pomocí existujících symbolů teorie $T$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 48
+    },
+    "p49": {
+      "front": "Prenexní normální forma",
+      "back": "Formule je v prenexní normální formě, pokud má tvar $Q_1x_1\\dots Q_nx_n\\psi$, kde $Q_i$ jsou kvantifikátory a $\\psi$ je kvantifikátorově volná formule.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 49
+    },
+    "p50": {
+      "front": "Skolemova varianta",
+      "back": "Skolemova varianta formule je ekvivalentní formule v prenexní normální formě, kde jsou všechny existenční kvantifikátory nahrazeny funkčními symboly (Skolemovými funkcemi).",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 50
+    },
+    "p51": {
+      "front": "Herbrandův model",
+      "back": "Herbrandův model je model, jehož doména je tvořena množinou všech termů jazyka a interpretace funkčních a relačních symbolů je dána syntakticky.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 51
+    },
+    "p52": {
+      "front": "Srovnání s kanonickým modelem",
+      "back": "Herbrandův model je specifický typ modelu, který se používá v důkazech splnitelnosti, zatímco kanonický model je obecný model odvozený z dokončeného tabla.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 52
+    },
+    "p53": {
+      "front": "Izomorfismus struktur",
+      "back": "Struktury $\\mathcal{A}$ a $\\mathcal{B}$ jsou izomorfní, pokud existuje bijekce $f:A\\to B$, která zachovává interpretace všech symbolů jazyka.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 53
+    },
+    "p54": {
+      "front": "ω-kategorická teorie",
+      "back": "Teorie $T$ je $\\omega$-kategorická, pokud má až na izomorfismus právě jeden spočetný model.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 54
+    },
+    "p55": {
+      "front": "Axiomatizovatelnost",
+      "back": "Teorie $T$ je axiomatizovatelná, pokud existuje množina axiomů $\\Sigma$, taková, že $T=\\text{Cn}(\\Sigma)$, kde $\\text{Cn}(\\Sigma)$ je množina všech důsledků $\\Sigma$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 55
+    },
+    "p56": {
+      "front": "Konečná axiomatizovatelnost",
+      "back": "Teorie $T$ je konečně axiomatizovatelná, pokud existuje konečná množina axiomů $\\Sigma$, taková, že $T=\\text{Cn}(\\Sigma)$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 56
+    },
+    "p57": {
+      "front": "Otevřená axiomatizovatelnost",
+      "back": "Teorie $T$ je otevřeně axiomatizovatelná, pokud existuje množina otevřených formulí $\\Sigma$, taková, že $T=\\text{Cn}(\\Sigma)$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 57
+    },
+    "p58": {
+      "front": "Rekurzivní axiomatizace",
+      "back": "Teorie $T$ je rekurzivně axiomatizovaná, pokud existuje rekurzivně spočetná množina axiomů $\\Sigma$, taková, že $T=\\text{Cn}(\\Sigma)$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 58
+    },
+    "p59": {
+      "front": "Rekurzivní axiomatizovatelnost",
+      "back": "Teorie $T$ je rekurzivně axiomatizovatelná, pokud existuje algoritmus, který rozhodne, zda daná formule patří do množiny axiomů teorie.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 59
+    },
+    "p60": {
+      "front": "Rekurzivně spočetná kompletace",
+      "back": "Teorie $T$ má rekurzivně spočetnou kompletaci, pokud existuje rekurzivně spočetná teorie $T'$, která je kompletní a $T\\subseteq T'$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 60
+    },
+    "p61": {
+      "front": "Rozhodnutelná teorie",
+      "back": "Teorie $T$ je rozhodnutelná, pokud existuje algoritmus, který pro každou formuli $\\varphi$ rozhodne, zda $T\\models\\varphi$.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 61
+    },
+    "p62": {
+      "front": "Částečně rozhodnutelná teorie",
+      "back": "Teorie $T$ je částečně rozhodnutelná, pokud existuje algoritmus, který pro každou formuli $\\varphi$ rozhodne, zda $T\\models\\varphi$, pokud $T\\models\\varphi$ platí.",
+      "tags": [
+        "pojem"
+      ],
+      "level": 0,
+      "id": 62
+    },
+    "l1": {
+      "front": "Množinu modelů nad konečným jazykem lze axiomatizovat výrokem v CNF, výrokem v DNF.",
+      "back": "- tvrzení\\n\\t- mějme konečný jazyk $\\mathbb P$ a libovolnou množinu modelů $M \\subseteq M_\\mathbb P$\\n\\t- potom existuje výrok $\\varphi_\\text{DNF}$ v DNF a výrok $\\varphi_\\text{CNF}$ v CNF takový, že $M = M_\\mathbb P(\\varphi_\\text{DNF}) = M_\\mathbb P(\\varphi_\\text{CNF})$\\n\\t- konkrétně\\n\\t\\t- $\\varphi_\\text{DNF} = \\bigvee_{v \\in M} \\bigwedge_{p \\in \\mathbb P} p^{v(p)}$\\n\\t\\t- $\\varphi_\\text{CNF} = \\bigwedge_{v \\in \\overline M} \\bigvee_{p \\in \\mathbb P} \\overline{p^{v(p)}}$\\n\\t- důkaz\\n\\t\\t- pro $\\varphi_\\text{DNF}$ jednoduché, každá elementární konjunkce popisuje jeden model\\n\\t\\t- stejný mechanismus se používá pro důkaz univerzálnosti $\\{ \\neg, \\land, \\lor \\}$\\n\\t\\t- výrok $\\varphi_\\text{CNF}$ je duální k výroku $\\varphi'_\\text{DNF}$ sestrojenému pro doplněk $M' = \\overline M$\\n\\t\\t- nebo můžeme dokázat přímo – každá klauzule zakazuje právě jeden nemodel",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 63
+    },
+    "l2": {
+      "front": "2-SAT, Algoritmus implikačního grafu, jeho korektnost.",
+      "back": "- výrok $\\varphi$ je v $k$-CNF, pokud je v CNF a každá klauzule má nejvýše $k$ literálů\\n\\t- $k$-SAT se ptá, zda je formule v $k$-CNF splnitelná\\n\\t- algoritmus implikačního grafu pro 2-SAT\\n\\t\\t- klauzuli $a\\lor b$ vyjádříme jako dvě implikace $\\overline a\\to b,\\;\\overline b\\to a$\\n\\t\\t- jednotkovou klauzuli $c$ zapíšeme jako $\\overline c\\to c$\\n\\t\\t- implikační graf $\\mathcal G_\\varphi$ je orientovaný graf, jehož vrcholy jsou všechny literály a hrany jsou dané implikacemi (viz výše)\\n\\t\\t- v grafu najdeme komponenty silné souvislosti\\n\\t\\t\\t- všechny literály v jedné komponentě musí být ohodnoceny stejně\\n\\t\\t- provedeme kontrakci komponent, dostaneme orientovaný acyklický graf $\\mathcal G^*_\\varphi$\\n\\t\\t\\t- postupujeme podle topologického uspořádání, vezmeme nejlevější neohodnocenou komponentu, ohodnotíme ji 0, opačnou komponentu ohodnotíme 1\\n\\t- algoritmus běží v lineárním čase, protože komponenty silné souvislosti i topologické uspořádání lze nalézt v čase $O(n+m)$\\n\\t- korektnost plyne z tvrzení, že *výrok je splnitelný, právě když žádná komponenta silné souvislosti neobsahuje dvojici opačných literálů*\\n\\t\\t- implikaci $\\implies$ lze nahlédnout obměnou\\n\\t\\t\\t- kdyby komponenta obsahovala dvojici opačných literálů, existovala by implikace $1\\to 0$\\n\\t\\t- opačná implikace\\n\\t\\t\\t- model jsme získali postupem uvedeným výše (pomocí topologického uspořádání grafu komponent)\\n\\t\\t\\t- kdyby v tomto modelu původní výrok neplatil, neplatila by některá z klauzulí\\n\\t\\t\\t- u jednotkových klauzulí máme hranu $\\overline c\\to c$ (stejná hrana je i na úrovni grafu komponent), tudíž jsme nutně ohodnotili $\\overline c$ dříve než $c$, tedy $c=1$\\n\\t\\t\\t- u 2-klauzulí máme dvě hrany a čtyři různé literály, dvě různé proměnné – jednu z nich jsme ohodnotili jako první, ta zaručí platnost klauzule\\n\\t\\t\\t- tedy všechny klauzule platí",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 64
+    },
+    "l3": {
+      "front": "Horn-SAT, Algoritmus jednotkové propagace, jeho korektnost.",
+      "back": "- výrok je hornovský, pokud je konjunkcí hornovských klauzulí, tj. klauzulí obsahujících nejvýše jeden pozitivní literál\\n\\t- algoritmus\\n\\t\\t- pokud $\\varphi$ obsahuje dvojici opačných jednotkových klauzulí, není splnitelný\\n\\t\\t- pokud $\\varphi$ neobsahuje žádnou jednotkovou klauzuli, je splnitelný, ohodnotíme všechny zbývající proměnné nulou\\n\\t\\t- pokud $\\varphi$ obsahuje jednotkovou klauzuli $\\ell$, ohodnotíme literál $\\ell$ hodnotou 1, provedeme jednotkovou propagaci a postup opakujeme\\n\\t- jednotková propagace pro $\\ell=1$\\n\\t\\t- každou klauzuli obsahující $\\ell$ odstraníme (protože je takto splněna)\\n\\t\\t- $\\overline\\ell$ odstraníme ze všech klauzulí, které ho obsahují (protože $\\overline\\ell$ nemůže zajistit splnění dané klauzule)\\n\\t- korektnost\\n\\t\\t- korektnost jednotkové propagace je popsána výše\\n\\t\\t- ohodnocení zbývajících proměnných nulou je zjevně korektní, neboť každá hornovská „nejednotková“ klauzule obsahuje negativní literál, který tak zajistí splnění klauzule\\n\\t- Horn-SAT lze řešit v lineárním čase\\n\\t\\t- kvadratický horní odhad lze nahlédnout tak, že v každém kroku výrok procházíme jednou a jednotková propagace ho vždy zkrátí",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 65
+    },
+    "l4": {
+      "front": "Vlastnosti extenze o definice.",
+      "back": "- je-li $T'$ extenze teorie $T$ o definice, potom platí:\\n\\t\\t- každý model teorie $T$ lze jednoznačně expandovat na model $T'\\n\\t\\t- $T'$ je konzervativní extenze $T$\\n\\t\\t- pro každou $L'$-formuli $\\varphi'$ existuje $L$-formule $\\varphi$ taková, že $T'\\models\\varphi'\\leftrightarrow\\varphi$\\n\\t- důkaz\\n\\t\\t- k expanzi modelu stačí přidat odpovídající relační a funkční symboly\\n\\t\\t- konzervativní extenze – vyplývá z tvrzení:\\n\\t\\t\\t- mějme jazyky $L\\subseteq L'$, teorii $T$ v $L$ a teorii $T'$ v $L'$\\n\\t\\t\\t- (i) $T'$ je extenzí $T$, právě když redukt každého modelu $T'$ na $L$ je modelem $T$\\n\\t\\t\\t\\t- důkaz $\\implies$\\n\\t\\t\\t\\t\\t- mějme $\\mathcal A'\\models T'$ a $\\mathcal A$, což je redukt $\\mathcal A'$ na jazyk $L$\\n\\t\\t\\t\\t\\t- $T'$ je extenzí $T$, takže v $T'$ platí každý axiom $\\varphi\\in T$\\n\\t\\t\\t\\t\\t- tudíž $\\mathcal A'\\models\\varphi$\\n\\t\\t\\t\\t\\t- proto i $\\mathcal A\\models\\varphi$, neboť $\\varphi$ obsahuje jen symboly z $L$\\n\\t\\t\\t\\t\\t- takže $\\mathcal A\\models T$\\n\\t\\t\\t\\t- důkaz $\\impliedby$\\n\\t\\t\\t\\t\\t- mějme $L$-sentenci $\\varphi$ takovou, že $T\\models\\varphi$\\n\\t\\t\\t\\t\\t- pro libovolný model $\\mathcal A'\\models T'$ víme, že jeho $L$-redukt $\\mathcal A$ je modelem $T$\\n\\t\\t\\t\\t\\t- tedy $\\mathcal A\\models\\varphi$\\n\\t\\t\\t\\t\\t- proto $\\mathcal A'\\models\\varphi$\\n\\t\\t\\t\\t\\t- tedy i $T'\\models\\varphi$\\n\\t\\t\\t- (ii) pokud je $T'$ extenzí $T$ a každý model $T$ lze expandovat do $L'$ na nějaký model $T'$, potom je $T'$ konzervativní extenzí $T$\\n\\t\\t\\t\\t- důkaz $\\implies$\\n\\t\\t\\t\\t\\t- vezměme libovolnou $L$-sentenci $\\varphi$, která platí v $T'$\\n\\t\\t\\t\\t\\t- každý model $\\mathcal A\\models T$ lze expandovat na nějaký model $\\mathcal A'\\models T'$\\n\\t\\t\\t\\t\\t- víme, že $\\mathcal A'\\models\\varphi$\\n\\t\\t\\t\\t\\t- takže i $\\mathcal A\\models\\varphi$\\n\\t\\t\\t\\t\\t- tudíž $T\\models\\varphi$\\n\\t\\t- $T'\\models\\varphi'\\leftrightarrow\\varphi$\\n\\t\\t\\t- pro relační symbol $R$\\n\\t\\t\\t\\t- v definici máme ekvivalenci $R\\leftrightarrow\\psi$\\n\\t\\t\\t\\t- $\\varphi$ vznikne tak, že nahradíme atomické podformule s novým symbolem $R$ formulí $\\psi'$, což je varianta $\\psi$ zaručující substituovatelnost všech termů\\n\\t\\t\\t\\t\\t- tedy $R(t_1,\\dots,t_n)$ nahradíme $\\psi'(x_1/t_1,\\dots,x_n/t_n)$\\n\\t\\t\\t\\t- substituovatelnost se dá zaručit třeba přejmenováním všech vázaných proměnných $\\psi$ na zcela nové\\n\\t\\t\\t- pro funkční symbol $f$\\n\\t\\t\\t\\t- v definici máme $f(x_1,\\dots,x_n)=y\\leftrightarrow\\psi(x_1,\\dots,x_n,y)$\\n\\t\\t\\t\\t- u více výskytů $f$ aplikujeme tento postup několikrát, v případě vnoření postupujeme od vnitřních\\n\\t\\t\\t\\t- jako $\\varphi^*$ označíme formuli vzniklou z $\\varphi'$ nahrazením termu $f(t_1,\\dots,t_n)$ novou proměnnou $z$\\n\\t\\t\\t\\t- $\\varphi$ dostaneme takto: $(\\exists z)(\\varphi^*\\land\\psi'(x_1/t_1,\\dots,x_n/t_n,y/z))$\\n\\t\\t\\t\\t- opět $\\psi'$ je varianta zaručující substituovatelnost\\n\\t\\t\\t\\t- díky této konstrukci a vlastnostem $T$ (axiomům jednoznačnosti a existence $z$) platí $T'\\models\\varphi'\\leftrightarrow\\varphi$",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 66
+    },
+    "l5": {
+      "front": "Vztah definovatelných množin a automorfismů.",
+      "back": "- tvrzení\\n\\t\\t- je-li $D\\subseteq A^n$ definovatelná ve struktuře $\\mathcal A$, potom pro každý automorfismus $h\\in\\text{Aut}(\\mathcal A)$ platí $h[D]=D$, kde $h[D]$ značí $\\set{h(\\overline a)\\mid\\overline a\\in D}$\\n\\t\\t- je-li $D$ definovatelná s parametry $\\overline b$, platí totéž pro automorfismy identické na $\\overline b$, tj. takové, že $h(\\overline b)=\\overline b$ (neboli $\\forall i:h(b_i)=b_i$)\\n\\t- důkaz (pro verzi s parametry)\\n\\t\\t- nechť $D=\\varphi^{\\mathcal A,\\overline b}(\\overline x,\\overline y)$\\n\\t\\t- potom pro každé $\\overline a \\in A^n$ platí\\n\\t\\t\\t- $\\overline a\\in D$\\n\\t\\t\\t- $\\iff\\mathcal A\\models\\varphi[e(\\overline x/\\overline a,\\overline y/\\overline b)]$\\n\\t\\t\\t- $\\iff\\mathcal A\\models\\varphi[(e\\circ h)(\\overline x/\\overline a,\\overline y/\\overline b)]$\\n\\t\\t\\t\\t- protože to je izomorfismus\\n\\t\\t\\t- $\\iff\\mathcal A\\models\\varphi[e(\\overline x/h(\\overline a),\\overline y/h(\\overline b))]$\\n\\t\\t\\t- $\\iff\\mathcal A\\models\\varphi[e(\\overline x/h(\\overline a),\\overline y/\\overline b)]$\\n\\t\\t\\t\\t- protože na $\\overline b$ je v tomhle automorfismu identita (z předpokladů tvrzení)\\n\\t\\t\\t- $\\iff h(\\overline a)\\in D$",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 67
+    },
+    "l6": {
+      "front": "Tablo metoda v jazyce s rovností.",
+      "back": "- chceme, aby v nějakém modelu $\\mathcal A$ teorie $T$ v jazyce s rovností byla relace $=^\\mathcal A$ kongruencí\\n\\t\\t- toho docílíme tak, že k teorii $T$ přidáme axiomy rovnosti – tablo sestavíme z výsledné teorie $T^*$\\n\\t- kongruence nám ale nestačí, chceme, aby rovnost byla identita, proto budeme všechny $=^\\mathcal A$-ekvivalentní prvky „identifikovat“ do jednoho\\n\\t\\t- tak vznikne faktorstruktura podle kongruence $=^\\mathcal A$\\n\\t- definice\\n\\t\\t- je-li $T$ teorie v jazyce $L$ s rovností, potom označme jako $T^*$ rozšíření teorie $T$ o generální uzávěry axiomů rovnosti pro jazyk $L$\\n\\t\\t- tablo důkaz z teorie $T$ je tablo důkaz z $T^*$, podobně pro tablo zamítnutí (a obecně jakékoliv tablo)\\n\\t- pozorování: jestliže $\\mathcal A\\models T^*$, potom platí i $\\mathcal A/_{=^\\mathcal A}\\models T^*$",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 68
+    },
+    "l7": {
+      "front": "Věta o kompaktnosti a její aplikace.",
+      "back": "- věta: teorie má model, právě když každá její konečná část má model\\n\\t- důkaz\\n\\t\\t- $\\implies:$ model teorie je zřejmě modelem každé její části\\n\\t\\t- $\\impliedby$ obměnou, chceme: pokud $T$ nemá model, existuje její konečná část, která nemá model\\n\\t\\t\\t- pokud $T$ nemá model, je sporná, tedy $T\\vdash\\bot$\\n\\t\\t\\t- vezměme nějaký konečný tablo důkaz $\\bot$ z $T$\\n\\t\\t\\t\\t- podle věty o konečnosti sporu\\n\\t\\t\\t- k jeho konstrukci stačí konečně mnoho axiomů $T$\\n\\t\\t\\t- ty tvoří konečnou podteorii $T'\\subseteq T$, která nemá model\\n\\t- aplikace\\n\\t\\t- popíšeme požadovanou vlastnost nekonečného objektu pomocí (nekonečné) výrokové teorie\\n\\t\\t- z konečné části teorie sestrojíme konečný podobjekt mající danou vlastnost\\n\\t- příklad\\n\\t\\t- spočetně nekonečný graf je bipartitní $\\iff$ každý jeho konečný podgraf je bipartitní\\n\\t\\t\\t- $T=\\set{p_u\\to\\neg p_v\\mid\\set{u,v}\\in E(G)}$",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 69
+    },
+    "l8": {
+      "front": "Věta o korektnosti rezoluce ve výrokové logice.",
+      "back": "- věta: je-li formule $S$ rezolucí zamítnutelná, potom je $S$ nesplnitelná\\n\\t- důkaz\\n\\t\\t- nechť $S\\vdash_R\\square$ a vezměme nějaký rezoluční důkaz $C_0,C_1,\\dots,C_n=\\square$\\n\\t\\t- předpokládejme pro spor, že $S$ je splnitelná\\n\\t\\t- tedy $\\mathcal V\\models S$ pro nějaké ohodnocení $\\mathcal V$\\n\\t\\t- indukcí podle $i$ dokážeme, že $\\mathcal V\\models C_i$\\n\\t\\t- pro $i=0$ to platí, neboť $C_0\\in S$\\n\\t\\t- pro $i\\gt 0$ máme dva případy\\n\\t\\t\\t- $C_i\\in S$, potom $\\mathcal V\\models C_i$ plyne z předpokladu, že $\\mathcal V\\models S$\\n\\t\\t\\t- $C_i$ je rezolventou nějakých dvou předchozích klauzulí, pro obě z nich z indukčního předpokladu platí, že ohodnocení $\\mathcal V$ je splňuje, takže $\\mathcal V\\models C_i$ plyne z korektnosti rezolučního pravidla\\n\\t\\t- indukcí dojdeme k tomu, že $\\mathcal V\\models\\square$, což je spor",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 70
+    },
+    "l9": {
+      "front": "Věta o korektnosti rezoluce v predikátové logice.",
+      "back": "- korektnost rezolučního pravidla\\n\\t\\t- v klauzuli $C_1$ jsou mj. výrazy $A_1,\\dots,A_n$\\n\\t\\t- v klauzuli $C_2$ jsou mj. výrazy $\\neg B_1,\\dots,\\neg B_m$\\n\\t\\t- množina výrazů $S=\\set{A_1,\\dots,A_n,B_1,\\dots,B_m}$ má nejobecnější unifikaci $\\sigma$ takovou, že $S\\sigma=\\set{A_1\\sigma}$\\n\\t\\t- $C_1,C_2$ jsou otevřené formule platné v $\\mathcal A$, takže platí i jejich instance po substituci, proto $\\mathcal A\\vDash C_1\\sigma$ a $\\mathcal A\\vDash C_2\\sigma$\\n\\t\\t- pokud $\\mathcal A\\vDash A_1\\sigma[e]$, potom $\\mathcal A\\nvDash\\neg A_1\\sigma [e]$ a musí být $\\mathcal A\\vDash C_2'\\sigma[e]$\\n\\t\\t\\t- kde $C'_2$ je část formule bez negací $B_i$\\n\\t\\t- tedy $\\mathcal A\\vDash C[e]$\\n\\t\\t- podobně to funguje i naopak – pokud $\\mathcal A\\nvDash A_1\\sigma[e]$\\n\\t- věta: pokud je CNF formule $S$ rezolucí zamítnutelná, potom je nesplnitelná\\n\\t- důkaz\\n\\t\\t- víme, že $S\\vdash_R\\square$, vezměme tedy nějaký rezoluční důkaz $\\square$ z $S$\\n\\t\\t- kdyby existoval model $\\mathcal A\\models S$, díky korektnosti rezolučního pravidla bychom mohli dokázat indukcí podle délky důkazu, že i $\\mathcal A\\models\\square$, což ale není možné",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 71
+    },
+    "l10": {
+      "front": "Souvislost stromu dosažení a splnitelnosti CNF formule.",
+      "back": "\\t- lemma: $S$ je splnitelná, právě když je splnitelná $S^\\ell$ nebo $S^{\\overline{\\ell}}$\\n\\t- důkaz lemmatu\\n\\t\\t- $\\implies$\\n\\t\\t\\t- mějme ohodnocení $\\mathcal V\\models S$\\n\\t\\t\\t- to nemůže obsahovat $\\ell$ i $\\overline\\ell$ (musí být konzistentní)\\n\\t\\t\\t- BÚNO $\\overline\\ell\\notin\\mathcal V$\\n\\t\\t\\t- vezmeme klauzuli v $S^\\ell$, ta je ve tvaru $C\\setminus\\set{\\overline\\ell}$ pro klauzuli $C\\in S$ neobsahující $\\ell$\\n\\t\\t\\t- víme, že $\\mathcal V\\models C$\\n\\t\\t\\t- $\\mathcal V$ neobsahuje $\\overline\\ell$, takže $\\mathcal V$ splnilo nějaký jiný literál $C$, takže platí i $\\mathcal V\\models C\\setminus\\set{\\overline\\ell}$\\n\\t\\t- $\\impliedby$\\n\\t\\t\\t- BÚNO existuje $\\mathcal V\\models S^\\ell$\\n\\t\\t\\t- $\\overline\\ell$ se nevyskytuje v $S^\\ell$, takže platí $\\mathcal V\\setminus\\set{\\overline\\ell}\\models S^\\ell$\\n\\t\\t\\t- ohodnocení $\\mathcal V'=(\\mathcal V\\setminus\\set{\\overline\\ell})\\cup\\set{\\ell}$ splňuje každou $C\\in S$\\n\\t\\t\\t\\t- pokud $\\ell\\in C$, klauzule je splněna díky $\\ell$ v $\\mathcal V'$\\n\\t\\t\\t\\t- pokud $\\ell\\notin C$, pak $\\mathcal V\\setminus\\set{\\overline\\ell}\\models C\\setminus\\set{\\overline\\ell}\\in S^\\ell$\\n\\t- tvrzení: formule $S$ (nad spočetným jazykem) je nesplnitelná, právě když každá větev stromu dosazení obsahuje prázdnou klauzuli $\\square$\\n\\t- důkaz tvrzení\\n\\t\\t- pro konečnou formuli lze dokázat indukcí podle počtu proměnných pomocí lemmatu\\n\\t\\t- pro nekonečnou formuli\\n\\t\\t\\t- je-li $S$ nekonečná a splnitelná, potom má splňující ohodnocení\\n\\t\\t\\t- to se shoduje s odpovídající nekonečnou větví ve stromu dosazení\\n\\t\\t\\t- je-li $S$ nekonečná a nesplnitelná, potom podle věty o kompaktnosti existuje nesplnitelná konečná část $S'\\subseteq S$\\n\\t\\t\\t- po dosazení pro všechny proměnné bude v každé větvi $\\square$ (po konečně mnoha krocích)",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 72
+    },
+    "l11": {
+      "front": "Nestandardní model přirozených čísel.",
+      "back": "\\t- nechť $\\underline{\\mathbb N}=\\braket{\\mathbb N,S,+,\\cdot,0,\\leq}$ je standardní model přirozených čísel\\n\\t- označme $\\text{Th}(\\underline{\\mathbb N})$ množinu všech sentencí pravdivých v $\\underline{\\mathbb N}$ (tzv. teorii struktury $\\underline{\\mathbb N}$)\\n\\t- pro $n\\in\\mathbb N$ definujme $n$-tý numerál jako term $\\underline n=S(S(\\dots S(0)\\dots))$, kde $S$ je aplikováno $n$-krát\\n\\t- vezměme nový konstantní symbol $c$ a vyjádřeme, že je ostře větší než každý $n$-tý numerál: $T=\\text{Th}(\\underline{\\mathbb N})\\cup\\set{\\underline n\\lt c\\mid n\\in\\mathbb N}$\\n\\t- každá konečná část $T$ má model\\n\\t- podle věty kompaktnosti má i $T$ model, říkáme mu nestandardní model\\n\\t- platí v něm tytéž sentence, jako ve standardním modelu, ale zároveň obsahuje prvek $c^\\mathcal A$, který je větší než každé $n\\in\\mathbb N$",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 73
+    },
+    "l12": {
+      "front": "Existence spočetného algebraicky uzavřeného tělesa.",
+      "back": "\\t- těleso je algebraicky uzavřené, pokud každý polynom nenulového stupně v něm má kořen\\n\\t- nespočetné těleso $\\mathbb C$ je algebraicky uzavřené ($\\mathbb R,\\mathbb Q$ nejsou)\\n\\t- algebraickou uzavřenost pro každé $n\\gt 0$ vyjádříme sentencí $\\psi_n=(\\forall x_{n-1})\\dots(\\forall x_0)(\\exists y)(y^n+x_{n-1}\\cdot y^{n-1}+\\dots+x_1\\cdot y+x_0)=0$\\n\\t\\t- kde $y^k$ je zkratka za term $\\underbrace{y\\cdot y\\cdot\\ldots\\cdot y}_{k}$\\n\\t\\t- $y$ tady odpovídá hledanému kořenu polynomu (obvykle se označuje jako $x$), naopak $x_i$ odpovídají koeficientům\\n\\t- z Löwenheim-Skolemovy věty s rovností vyplývá důsledek, že ke každé nekonečné $L$-struktuře (kde $L$ je spočetný jazyk s rovností) existuje elementárně ekvivalentní spočetně nekonečná struktura\\n\\t- tedy existuje spočetně nekonečná struktura $\\mathcal A$ elementárně ekvivalentní tělesu $\\mathbb C$\\n\\t- $\\mathbb C$ je těleso a $\\forall n\\gt 0:\\mathbb C\\models\\psi_n\\implies\\mathcal A$ je algebraicky uzavřené těleso",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 74
+    },
+    "l13": {
+      "front": "Tělesa charakteristiky 0 nejsou konečně axiomatizovatelná.",
+      "back": "- těleso charakteristiky 0 … sečtením prvočíselného počtu jedniček nikdy nedostanu nulu\\n\\t\\t- $T$ … teorie těles\\n\\t\\t- $T_0$ … teorie axiomatizující třídu těles charakteristiky 0\\n\\t\\t- $T_0=T\\cup\\set{\\neg p1=0\\mid p \\text{ je prvo\\v{c}íslo}}\\n\\t\\t\\t- $p1$ … $\\underbrace{1+1+\\dots+1}_p$\\n\\t- tvrzení: třída $K$ těles charakteristiky 0 není konečně axiomatizovatelná\\n\\t- důkaz\\n\\t\\t- podle věty o konečné axiomatizovatelnosti stačí ukázat, že $\\overline K$ (tělesa nenulové charakteristiky a netělesa) není axiomatizovatelná\\n\\t\\t- sporem: $\\overline K=M(S)$\\n\\t\\t- potom $S'=S\\cup T_0$ má model, neboť každá konečná část má model\\n\\t\\t\\t- pro konečné části $S$ jednoduché\\n\\t\\t\\t- pro konečné části $T_0$ vezmeme těleso prvočíselné charakteristiky větší než jakékoliv $p$ z axiomu $T_0$ tvaru $\\neg p1=0$\\n\\t\\t- nechť $\\mathcal A$ je model $S'$\\n\\t\\t- potom je i modelem $S$, takže $\\mathcal A\\in\\overline K$\\n\\t\\t- zároveň je ale modelem $T_0$, takže $\\mathcal A\\in K$, což je spor",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 75
+    },
+    "l14": {
+      "front": "Kritérium otevřené axiomatizovatelnosti.",
+      "back": "\\t- pozorování: je-li $\\mathcal B\\subseteq\\mathcal A$, potom pro každou otevřenou formuli $\\varphi$ a ohodnocení $e:\\text{Var}\\to B$ platí $\\mathcal B\\models\\varphi[e]\\iff\\mathcal A\\models\\varphi[e]$\\n\\t\\t- protože prvky z $B$ jsou i v $A$\\n\\t\\t- lze dokázat indukcí podle struktury formule\\n\\t- tvrzení: je-li $T$ otevřeně axiomatizovatelná, potom je každá podstruktura modelu $T$ také modelem $T$\\n\\t- důkaz\\n\\t\\t- buď $T'$ otevřená axiomatizace $T$, $\\mathcal A$ model $T'$, $\\mathcal {B\\subseteq A}$\\n\\t\\t- pro každou $\\varphi\\in T'$ platí $\\mathcal B\\models\\varphi$ ($\\varphi$ je otevřená, použijeme pozorování)\\n\\t\\t- tedy i $\\mathcal B\\models T'$\\n\\t- příklady\\n\\t\\t- DeLO není otevřeně axiomatizovatelná – konečná podstruktura nemůže být hustá\\n\\t\\t- teorie těles není otevřeně axiomatizovatelná – podstruktura $\\mathbb Z$ nemá inverzní prvek k 2 vůči násobení",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 76
+    },
+    "l15": {
+      "front": "Rekurzivně axiomatizovaná teorie je částečně rozhodnutelná, kompletní je rozhodnutelná.",
+      "back": "\\t- tvrzení: je-li $T$ rekurzivně axiomatizovaná, potom je částečně rozhodnutelná, je-li navíc kompletní, je rozhodnutelná\\n\\t- důkaz\\n\\t\\t- rekurzivní axiomatizovanost → částečná rozhodnutelnost\\n\\t\\t\\t- algoritmus konstruuje systematické tablo z $T$ pro $\\text F\\varphi$\\n\\t\\t\\t- pokud $T\\vDash\\varphi$, konstrukce skončí v konečně mno\\tha krocích\\n\\t\\t\\t- jinak konstrukce nemusí skončit\\n\\t\\t- rekurzivní axiomatizovanost & kompletnost → rozhodnutelnost\\n\\t\\t\\t- z kompletnosti plyne, že buď $T\\vdash\\varphi$ nebo $T\\vdash\\neg\\varphi$\\n\\t\\t\\t- algoritmus současně konstruuje tablo pro $\\text F\\varphi$ a tablo pro $\\text T\\varphi$\\n\\t\\t\\t- jedna z konstrukcí po konečně mnoha krocích skončí",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 77
+    },
+    "l16": {
+      "front": "Teorie konečné struktury v konečném jazyce s rovností je rozhodnutelná.",
+      "back": "\\t- tvrzení: je-li $\\mathcal A$ konečná struktura v konečném jazyce s rovností, potom je teorie $\\text{Th}(\\mathcal A)$ rekurzivně axiomatizovatelná\\n\\t- důkaz\\n\\t\\t- očíslujme prvku domény jako $A=\\set{a_1,\\dots,a_n}$\\n\\t\\t- $\\text{Th}(\\mathcal A)$ lze axiomatizovat sentencí, která je tvaru „existuje právě $n$ prvků $a_1,\\dots,a_n$ splňujících právě ty základní vztahy o funkčních hodnotách a relacích, které platí v $\\mathcal A$“\\n\\t- $\\text{Th}(\\mathcal A)$ (množina všech $L$-sentencí platných v $\\mathcal A$) je zjevně kompletní (podle pozorování 9.1.3)\\n\\t- rekurzivní axiomatizovanost & kompletnost → rozhodnutelnost",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 78
+    },
+    "l17": {
+      "front": "Gödelovy věty o neúplnosti a jejich důsledky (bez důkazů).",
+      "back": "- První věta o neúplnosti: Pro každou bezespornou rekurzivně axiomatizovanou extenzi $T$ Robinsonovy aritmetiky existuje sentence, která je pravdivá v $\\underline{\\mathbb N}$, ale není dokazatelná v $T$.\\n\\t- důsledek 1.1: je-li $T$ rekurzivně axiomatizovaná extenze Robinsonovy aritmetiky a je-li navíc $\\underline{\\mathbb N}$ modelem teorie $T$, potom $T$ není kompletní\\n\\t\\t- pro sentenci, která není dokazatelná v $T$, nemůže být dokazatelná ani její negace (byl by to spor s její pravdivostí v $\\underline{\\mathbb N}$)\\n\\t- důsledek 1.2: teorie $\\text{Th}(\\underline{\\mathbb N})$ není rekurzivně axiomatizovatelná\\n\\t\\t- kdyby byla, nemohla by být kompletní – ale ona kompletní je\\n\\t- věta (Rosserův trik): v každé bezesporné rekurzivně axiomatizované extenzi Robinsonovy aritmetiky existuje nezávislá sentence – tedy taková není kompletní\\n\\t\\t- v podstatě plyne z důsledku 1.1, jen se zbavuje $\\underline{\\mathbb N}$ \\n\\t- Druhá věta o neúplnosti: Pro každou bezespornou rekurzivně axiomatizovanou extenzi $T$ Peanovy aritmetiky platí, že $\\mathit{Con_T}$ není dokazatelná v $T$.\\n\\t- $\\mathit{Con_T}$ … sentence vyjadřující bezespornost (konzistence) teorie $T$\\n\\t\\t- $\\mathit{Con_T}=\\neg(\\exists y)\\mathit{Prf_{T}}(\\underline{0=S(0)},y)$\\n\\t\\t- $\\mathit{Prf_{T}}(x,y)$ … $y$ je důkaz $x$ v $T$\\n\\t- důsledek 2.1: existuje model Peanovy aritmetiky (PA), ve kterém platí sentence $(\\exists y)\\mathit{Prf_{PA}}(\\underline{0=S(0)},y)$\\n\\t- důsledek 2.2: existuje bezesporná rekurzivně axiomatizovaná extenze $T$ Peanovy aritmetiky, která dokazuje svou spornost, tj. taková, že $T\\vdash\\neg \\mathit{Con_T}$\\n\\t- důsledek 2.3: je-li teorie množin ZFC bezesporná, nemůže být sentence $\\mathit{Con_{ZFC}}$ v teorii ZFC dokazatelná",
+      "tags": [
+        "lehká"
+      ],
+      "level": 0,
+      "id": 79
+    },
+    "t1": {
+      "front": "Věta o korektnosti tablo metody ve výrokové logice.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 80
+    },
+    "t2": {
+      "front": "Věta o korektnosti tablo metody v predikátové logice.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 81
+    },
+    "t3": {
+      "front": "Věta o úplnosti tablo metody ve výrokové logice.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 82
+    },
+    "t4": {
+      "front": "Věta o úplnosti tablo metody v predikátové logice.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 83
+    },
+    "t5": {
+      "front": "Věta o konečnosti sporu, důsledky o konečnosti a systematičnosti důkazů.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 84
+    },
+    "t6": {
+      "front": "Věta o úplnosti rezoluce ve výrokové logice.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 85
+    },
+    "t7": {
+      "front": "Věta o úplnosti rezoluce v predikátové logice (Lifting lemma stačí vyslovit).",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 86
+    },
+    "t8": {
+      "front": "Skolemova věta.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 87
+    },
+    "t9": {
+      "front": "Herbrandova věta.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 88
+    },
+    "t10": {
+      "front": "Löwenheim-Skolemova věta včetně varianty s rovností, jejich důsledky.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 89
+    },
+    "t11": {
+      "front": "Vztah izomorfismu a elementární ekvivalence.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 90
+    },
+    "t12": {
+      "front": "ω-kategorické kritérium kompletnosti.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 91
+    },
+    "t13": {
+      "front": "Neaxiomatizovatelnost konečných modelů.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 92
+    },
+    "t14": {
+      "front": "Věta o konečné axiomatizovatelnosti.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 93
+    },
+    "t15": {
+      "front": "Rekurzivně axiomatizovaná teorie s rekurzivně spočetnou kompletací je rozhodnutelná.",
+      "back": "",
+      "tags": [
+        "těžká"
+      ],
+      "level": 0,
+      "id": 94
     }
-  }
+  },
+  "tags": [
+    "logika",
+    "zkouška",
+    "vygenerováno"
+  ]
 }

@@ -1,512 +1,510 @@
 {
-  "deck": {
-    "id": "2",
-    "name": "Sample Generated Deck",
-    "filename": "mock-01-data.json",
-    "tags": [
-      "generated",
-      "test",
-      "demo"
-    ],
-    "cards": {
-      "q1": {
-        "front": "What is the answer to question 1?",
-        "back": "The answer to question 1 is 2.",
-        "tags": [
-          "geography",
-          "language",
-          "medium"
-        ],
-        "level": 5,
-        "id": 1
-      },
-      "q2": {
-        "front": "What is the answer to question 2?",
-        "back": "The answer to question 2 is 4.",
-        "tags": [
-          "medium"
-        ],
-        "level": 3,
-        "id": 2
-      },
-      "q3": {
-        "front": "What is the answer to question 3?",
-        "back": "The answer to question 3 is 6.",
-        "tags": [
-          "math",
-          "history"
-        ],
-        "level": 1,
-        "id": 3
-      },
-      "q4": {
-        "front": "What is the answer to question 4?",
-        "back": "The answer to question 4 is 8.",
-        "tags": [
-          "medium",
-          "history",
-          "math"
-        ],
-        "level": 5,
-        "id": 4
-      },
-      "q5": {
-        "front": "What is the answer to question 5?",
-        "back": "The answer to question 5 is 10.",
-        "tags": [
-          "easy",
-          "science"
-        ],
-        "level": 4,
-        "id": 5
-      },
-      "q6": {
-        "front": "What is the answer to question 6?",
-        "back": "The answer to question 6 is 12.",
-        "tags": [
-          "easy"
-        ],
-        "level": 2,
-        "id": 6
-      },
-      "q7": {
-        "front": "What is the answer to question 7?",
-        "back": "The answer to question 7 is 14.",
-        "tags": [
-          "medium",
-          "history"
-        ],
-        "level": 2,
-        "id": 7
-      },
-      "q8": {
-        "front": "What is the answer to question 8?",
-        "back": "The answer to question 8 is 16.",
-        "tags": [
-          "science",
-          "history"
-        ],
-        "level": 0,
-        "id": 8
-      },
-      "q9": {
-        "front": "What is the answer to question 9?",
-        "back": "The answer to question 9 is 18.",
-        "tags": [
-          "geography",
-          "easy",
-          "history"
-        ],
-        "level": 1,
-        "id": 9
-      },
-      "q10": {
-        "front": "What is the answer to question 10?",
-        "back": "The answer to question 10 is 20.",
-        "tags": [
-          "easy",
-          "history"
-        ],
-        "level": 5,
-        "id": 10
-      },
-      "q11": {
-        "front": "What is the answer to question 11?",
-        "back": "The answer to question 11 is 22.",
-        "tags": [
-          "hard",
-          "science"
-        ],
-        "level": 0,
-        "id": 11
-      },
-      "q12": {
-        "front": "What is the answer to question 12?",
-        "back": "The answer to question 12 is 24.",
-        "tags": [
-          "language",
-          "hard"
-        ],
-        "level": 0,
-        "id": 12
-      },
-      "q13": {
-        "front": "What is the answer to question 13?",
-        "back": "The answer to question 13 is 26.",
-        "tags": [
-          "history",
-          "medium"
-        ],
-        "level": 1,
-        "id": 13
-      },
-      "q14": {
-        "front": "What is the answer to question 14?",
-        "back": "The answer to question 14 is 28.",
-        "tags": [
-          "hard",
-          "medium",
-          "geography"
-        ],
-        "level": 3,
-        "id": 14
-      },
-      "q15": {
-        "front": "What is the answer to question 15?",
-        "back": "The answer to question 15 is 30.",
-        "tags": [
-          "history"
-        ],
-        "level": 4,
-        "id": 15
-      },
-      "q16": {
-        "front": "What is the answer to question 16?",
-        "back": "The answer to question 16 is 32.",
-        "tags": [
-          "hard",
-          "medium"
-        ],
-        "level": 4,
-        "id": 16
-      },
-      "q17": {
-        "front": "What is the answer to question 17?",
-        "back": "The answer to question 17 is 34.",
-        "tags": [
-          "history",
-          "math",
-          "medium"
-        ],
-        "level": 5,
-        "id": 17
-      },
-      "q18": {
-        "front": "What is the answer to question 18?",
-        "back": "The answer to question 18 is 36.",
-        "tags": [
-          "geography"
-        ],
-        "level": 1,
-        "id": 18
-      },
-      "q19": {
-        "front": "What is the answer to question 19?",
-        "back": "The answer to question 19 is 38.",
-        "tags": [
-          "geography"
-        ],
-        "level": 0,
-        "id": 19
-      },
-      "q20": {
-        "front": "What is the answer to question 20?",
-        "back": "The answer to question 20 is 40.",
-        "tags": [
-          "easy",
-          "language"
-        ],
-        "level": 4,
-        "id": 20
-      },
-      "q21": {
-        "front": "What is the answer to question 21?",
-        "back": "The answer to question 21 is 42.",
-        "tags": [
-          "history",
-          "geography"
-        ],
-        "level": 4,
-        "id": 21
-      },
-      "q22": {
-        "front": "What is the answer to question 22?",
-        "back": "The answer to question 22 is 44.",
-        "tags": [
-          "hard",
-          "geography",
-          "history"
-        ],
-        "level": 4,
-        "id": 22
-      },
-      "q23": {
-        "front": "What is the answer to question 23?",
-        "back": "The answer to question 23 is 46.",
-        "tags": [
-          "history",
-          "hard",
-          "math"
-        ],
-        "level": 5,
-        "id": 23
-      },
-      "q24": {
-        "front": "What is the answer to question 24?",
-        "back": "The answer to question 24 is 48.",
-        "tags": [
-          "history",
-          "hard"
-        ],
-        "level": 1,
-        "id": 24
-      },
-      "q25": {
-        "front": "What is the answer to question 25?",
-        "back": "The answer to question 25 is 50.",
-        "tags": [
-          "geography",
-          "medium",
-          "math"
-        ],
-        "level": 1,
-        "id": 25
-      },
-      "q26": {
-        "front": "What is the answer to question 26?",
-        "back": "The answer to question 26 is 52.",
-        "tags": [
-          "history"
-        ],
-        "level": 1,
-        "id": 26
-      },
-      "q27": {
-        "front": "What is the answer to question 27?",
-        "back": "The answer to question 27 is 54.",
-        "tags": [
-          "medium"
-        ],
-        "level": 3,
-        "id": 27
-      },
-      "q28": {
-        "front": "What is the answer to question 28?",
-        "back": "The answer to question 28 is 56.",
-        "tags": [
-          "math"
-        ],
-        "level": 2,
-        "id": 28
-      },
-      "q29": {
-        "front": "What is the answer to question 29?",
-        "back": "The answer to question 29 is 58.",
-        "tags": [
-          "science"
-        ],
-        "level": 5,
-        "id": 29
-      },
-      "q30": {
-        "front": "What is the answer to question 30?",
-        "back": "The answer to question 30 is 60.",
-        "tags": [
-          "hard",
-          "math",
-          "history"
-        ],
-        "level": 0,
-        "id": 30
-      },
-      "q31": {
-        "front": "What is the answer to question 31?",
-        "back": "The answer to question 31 is 62.",
-        "tags": [
-          "easy"
-        ],
-        "level": 0,
-        "id": 31
-      },
-      "q32": {
-        "front": "What is the answer to question 32?",
-        "back": "The answer to question 32 is 64.",
-        "tags": [
-          "easy",
-          "history"
-        ],
-        "level": 1,
-        "id": 32
-      },
-      "q33": {
-        "front": "What is the answer to question 33?",
-        "back": "The answer to question 33 is 66.",
-        "tags": [
-          "math"
-        ],
-        "level": 2,
-        "id": 33
-      },
-      "q34": {
-        "front": "What is the answer to question 34?",
-        "back": "The answer to question 34 is 68.",
-        "tags": [
-          "math",
-          "hard",
-          "geography"
-        ],
-        "level": 2,
-        "id": 34
-      },
-      "q35": {
-        "front": "What is the answer to question 35?",
-        "back": "The answer to question 35 is 70.",
-        "tags": [
-          "hard",
-          "easy",
-          "medium"
-        ],
-        "level": 1,
-        "id": 35
-      },
-      "q36": {
-        "front": "What is the answer to question 36?",
-        "back": "The answer to question 36 is 72.",
-        "tags": [
-          "history",
-          "geography"
-        ],
-        "level": 1,
-        "id": 36
-      },
-      "q37": {
-        "front": "What is the answer to question 37?",
-        "back": "The answer to question 37 is 74.",
-        "tags": [
-          "easy"
-        ],
-        "level": 2,
-        "id": 37
-      },
-      "q38": {
-        "front": "What is the answer to question 38?",
-        "back": "The answer to question 38 is 76.",
-        "tags": [
-          "math"
-        ],
-        "level": 5,
-        "id": 38
-      },
-      "q39": {
-        "front": "What is the answer to question 39?",
-        "back": "The answer to question 39 is 78.",
-        "tags": [
-          "medium",
-          "hard",
-          "language"
-        ],
-        "level": 5,
-        "id": 39
-      },
-      "q40": {
-        "front": "What is the answer to question 40?",
-        "back": "The answer to question 40 is 80.",
-        "tags": [
-          "science",
-          "hard",
-          "easy"
-        ],
-        "level": 2,
-        "id": 40
-      },
-      "q41": {
-        "front": "What is the answer to question 41?",
-        "back": "The answer to question 41 is 82.",
-        "tags": [
-          "history"
-        ],
-        "level": 1,
-        "id": 41
-      },
-      "q42": {
-        "front": "What is the answer to question 42?",
-        "back": "The answer to question 42 is 84.",
-        "tags": [
-          "science",
-          "easy",
-          "medium"
-        ],
-        "level": 2,
-        "id": 42
-      },
-      "q43": {
-        "front": "What is the answer to question 43?",
-        "back": "The answer to question 43 is 86.",
-        "tags": [
-          "language"
-        ],
-        "level": 5,
-        "id": 43
-      },
-      "q44": {
-        "front": "What is the answer to question 44?",
-        "back": "The answer to question 44 is 88.",
-        "tags": [
-          "language",
-          "geography",
-          "math"
-        ],
-        "level": 3,
-        "id": 44
-      },
-      "q45": {
-        "front": "What is the answer to question 45?",
-        "back": "The answer to question 45 is 90.",
-        "tags": [
-          "hard",
-          "history",
-          "language"
-        ],
-        "level": 0,
-        "id": 45
-      },
-      "q46": {
-        "front": "What is the answer to question 46?",
-        "back": "The answer to question 46 is 92.",
-        "tags": [
-          "math"
-        ],
-        "level": 1,
-        "id": 46
-      },
-      "q47": {
-        "front": "What is the answer to question 47?",
-        "back": "The answer to question 47 is 94.",
-        "tags": [
-          "science"
-        ],
-        "level": 4,
-        "id": 47
-      },
-      "q48": {
-        "front": "What is the answer to question 48?",
-        "back": "The answer to question 48 is 96.",
-        "tags": [
-          "easy",
-          "history"
-        ],
-        "level": 3,
-        "id": 48
-      },
-      "q49": {
-        "front": "What is the answer to question 49?",
-        "back": "The answer to question 49 is 98.",
-        "tags": [
-          "geography"
-        ],
-        "level": 2,
-        "id": 49
-      },
-      "q50": {
-        "front": "What is the answer to question 50?",
-        "back": "The answer to question 50 is 100.",
-        "tags": [
-          "science",
-          "math"
-        ],
-        "level": 1,
-        "id": 50
-      }
+  "id": "2",
+  "name": "Sample Generated Deck",
+  "filename": "mock-01-data.json",
+  "cards": {
+    "q1": {
+      "front": "What is the answer to question 1?",
+      "back": "The answer to question 1 is 2.",
+      "tags": [
+        "geography",
+        "language",
+        "medium"
+      ],
+      "level": 0,
+      "id": 1
+    },
+    "q2": {
+      "front": "What is the answer to question 2?",
+      "back": "The answer to question 2 is 4.",
+      "tags": [
+        "medium"
+      ],
+      "level": 0,
+      "id": 2
+    },
+    "q3": {
+      "front": "What is the answer to question 3?",
+      "back": "The answer to question 3 is 6.",
+      "tags": [
+        "math",
+        "history"
+      ],
+      "level": 0,
+      "id": 3
+    },
+    "q4": {
+      "front": "What is the answer to question 4?",
+      "back": "The answer to question 4 is 8.",
+      "tags": [
+        "medium",
+        "history",
+        "math"
+      ],
+      "level": 0,
+      "id": 4
+    },
+    "q5": {
+      "front": "What is the answer to question 5?",
+      "back": "The answer to question 5 is 10.",
+      "tags": [
+        "easy",
+        "science"
+      ],
+      "level": 0,
+      "id": 5
+    },
+    "q6": {
+      "front": "What is the answer to question 6?",
+      "back": "The answer to question 6 is 12.",
+      "tags": [
+        "easy"
+      ],
+      "level": 0,
+      "id": 6
+    },
+    "q7": {
+      "front": "What is the answer to question 7?",
+      "back": "The answer to question 7 is 14.",
+      "tags": [
+        "medium",
+        "history"
+      ],
+      "level": 0,
+      "id": 7
+    },
+    "q8": {
+      "front": "What is the answer to question 8?",
+      "back": "The answer to question 8 is 16.",
+      "tags": [
+        "science",
+        "history"
+      ],
+      "level": 0,
+      "id": 8
+    },
+    "q9": {
+      "front": "What is the answer to question 9?",
+      "back": "The answer to question 9 is 18.",
+      "tags": [
+        "geography",
+        "easy",
+        "history"
+      ],
+      "level": 0,
+      "id": 9
+    },
+    "q10": {
+      "front": "What is the answer to question 10?",
+      "back": "The answer to question 10 is 20.",
+      "tags": [
+        "easy",
+        "history"
+      ],
+      "level": 0,
+      "id": 10
+    },
+    "q11": {
+      "front": "What is the answer to question 11?",
+      "back": "The answer to question 11 is 22.",
+      "tags": [
+        "hard",
+        "science"
+      ],
+      "level": 0,
+      "id": 11
+    },
+    "q12": {
+      "front": "What is the answer to question 12?",
+      "back": "The answer to question 12 is 24.",
+      "tags": [
+        "language",
+        "hard"
+      ],
+      "level": 0,
+      "id": 12
+    },
+    "q13": {
+      "front": "What is the answer to question 13?",
+      "back": "The answer to question 13 is 26.",
+      "tags": [
+        "history",
+        "medium"
+      ],
+      "level": 0,
+      "id": 13
+    },
+    "q14": {
+      "front": "What is the answer to question 14?",
+      "back": "The answer to question 14 is 28.",
+      "tags": [
+        "hard",
+        "medium",
+        "geography"
+      ],
+      "level": 0,
+      "id": 14
+    },
+    "q15": {
+      "front": "What is the answer to question 15?",
+      "back": "The answer to question 15 is 30.",
+      "tags": [
+        "history"
+      ],
+      "level": 0,
+      "id": 15
+    },
+    "q16": {
+      "front": "What is the answer to question 16?",
+      "back": "The answer to question 16 is 32.",
+      "tags": [
+        "hard",
+        "medium"
+      ],
+      "level": 0,
+      "id": 16
+    },
+    "q17": {
+      "front": "What is the answer to question 17?",
+      "back": "The answer to question 17 is 34.",
+      "tags": [
+        "history",
+        "math",
+        "medium"
+      ],
+      "level": 0,
+      "id": 17
+    },
+    "q18": {
+      "front": "What is the answer to question 18?",
+      "back": "The answer to question 18 is 36.",
+      "tags": [
+        "geography"
+      ],
+      "level": 0,
+      "id": 18
+    },
+    "q19": {
+      "front": "What is the answer to question 19?",
+      "back": "The answer to question 19 is 38.",
+      "tags": [
+        "geography"
+      ],
+      "level": 0,
+      "id": 19
+    },
+    "q20": {
+      "front": "What is the answer to question 20?",
+      "back": "The answer to question 20 is 40.",
+      "tags": [
+        "easy",
+        "language"
+      ],
+      "level": 0,
+      "id": 20
+    },
+    "q21": {
+      "front": "What is the answer to question 21?",
+      "back": "The answer to question 21 is 42.",
+      "tags": [
+        "history",
+        "geography"
+      ],
+      "level": 0,
+      "id": 21
+    },
+    "q22": {
+      "front": "What is the answer to question 22?",
+      "back": "The answer to question 22 is 44.",
+      "tags": [
+        "hard",
+        "geography",
+        "history"
+      ],
+      "level": 0,
+      "id": 22
+    },
+    "q23": {
+      "front": "What is the answer to question 23?",
+      "back": "The answer to question 23 is 46.",
+      "tags": [
+        "history",
+        "hard",
+        "math"
+      ],
+      "level": 0,
+      "id": 23
+    },
+    "q24": {
+      "front": "What is the answer to question 24?",
+      "back": "The answer to question 24 is 48.",
+      "tags": [
+        "history",
+        "hard"
+      ],
+      "level": 0,
+      "id": 24
+    },
+    "q25": {
+      "front": "What is the answer to question 25?",
+      "back": "The answer to question 25 is 50.",
+      "tags": [
+        "geography",
+        "medium",
+        "math"
+      ],
+      "level": 0,
+      "id": 25
+    },
+    "q26": {
+      "front": "What is the answer to question 26?",
+      "back": "The answer to question 26 is 52.",
+      "tags": [
+        "history"
+      ],
+      "level": 0,
+      "id": 26
+    },
+    "q27": {
+      "front": "What is the answer to question 27?",
+      "back": "The answer to question 27 is 54.",
+      "tags": [
+        "medium"
+      ],
+      "level": 0,
+      "id": 27
+    },
+    "q28": {
+      "front": "What is the answer to question 28?",
+      "back": "The answer to question 28 is 56.",
+      "tags": [
+        "math"
+      ],
+      "level": 0,
+      "id": 28
+    },
+    "q29": {
+      "front": "What is the answer to question 29?",
+      "back": "The answer to question 29 is 58.",
+      "tags": [
+        "science"
+      ],
+      "level": 0,
+      "id": 29
+    },
+    "q30": {
+      "front": "What is the answer to question 30?",
+      "back": "The answer to question 30 is 60.",
+      "tags": [
+        "hard",
+        "math",
+        "history"
+      ],
+      "level": 0,
+      "id": 30
+    },
+    "q31": {
+      "front": "What is the answer to question 31?",
+      "back": "The answer to question 31 is 62.",
+      "tags": [
+        "easy"
+      ],
+      "level": 0,
+      "id": 31
+    },
+    "q32": {
+      "front": "What is the answer to question 32?",
+      "back": "The answer to question 32 is 64.",
+      "tags": [
+        "easy",
+        "history"
+      ],
+      "level": 0,
+      "id": 32
+    },
+    "q33": {
+      "front": "What is the answer to question 33?",
+      "back": "The answer to question 33 is 66.",
+      "tags": [
+        "math"
+      ],
+      "level": 0,
+      "id": 33
+    },
+    "q34": {
+      "front": "What is the answer to question 34?",
+      "back": "The answer to question 34 is 68.",
+      "tags": [
+        "math",
+        "hard",
+        "geography"
+      ],
+      "level": 0,
+      "id": 34
+    },
+    "q35": {
+      "front": "What is the answer to question 35?",
+      "back": "The answer to question 35 is 70.",
+      "tags": [
+        "hard",
+        "easy",
+        "medium"
+      ],
+      "level": 0,
+      "id": 35
+    },
+    "q36": {
+      "front": "What is the answer to question 36?",
+      "back": "The answer to question 36 is 72.",
+      "tags": [
+        "history",
+        "geography"
+      ],
+      "level": 0,
+      "id": 36
+    },
+    "q37": {
+      "front": "What is the answer to question 37?",
+      "back": "The answer to question 37 is 74.",
+      "tags": [
+        "easy"
+      ],
+      "level": 0,
+      "id": 37
+    },
+    "q38": {
+      "front": "What is the answer to question 38?",
+      "back": "The answer to question 38 is 76.",
+      "tags": [
+        "math"
+      ],
+      "level": 0,
+      "id": 38
+    },
+    "q39": {
+      "front": "What is the answer to question 39?",
+      "back": "The answer to question 39 is 78.",
+      "tags": [
+        "medium",
+        "hard",
+        "language"
+      ],
+      "level": 0,
+      "id": 39
+    },
+    "q40": {
+      "front": "What is the answer to question 40?",
+      "back": "The answer to question 40 is 80.",
+      "tags": [
+        "science",
+        "hard",
+        "easy"
+      ],
+      "level": 0,
+      "id": 40
+    },
+    "q41": {
+      "front": "What is the answer to question 41?",
+      "back": "The answer to question 41 is 82.",
+      "tags": [
+        "history"
+      ],
+      "level": 0,
+      "id": 41
+    },
+    "q42": {
+      "front": "What is the answer to question 42?",
+      "back": "The answer to question 42 is 84.",
+      "tags": [
+        "science",
+        "easy",
+        "medium"
+      ],
+      "level": 0,
+      "id": 42
+    },
+    "q43": {
+      "front": "What is the answer to question 43?",
+      "back": "The answer to question 43 is 86.",
+      "tags": [
+        "language"
+      ],
+      "level": 0,
+      "id": 43
+    },
+    "q44": {
+      "front": "What is the answer to question 44?",
+      "back": "The answer to question 44 is 88.",
+      "tags": [
+        "language",
+        "geography",
+        "math"
+      ],
+      "level": 0,
+      "id": 44
+    },
+    "q45": {
+      "front": "What is the answer to question 45?",
+      "back": "The answer to question 45 is 90.",
+      "tags": [
+        "hard",
+        "history",
+        "language"
+      ],
+      "level": 0,
+      "id": 45
+    },
+    "q46": {
+      "front": "What is the answer to question 46?",
+      "back": "The answer to question 46 is 92.",
+      "tags": [
+        "math"
+      ],
+      "level": 0,
+      "id": 46
+    },
+    "q47": {
+      "front": "What is the answer to question 47?",
+      "back": "The answer to question 47 is 94.",
+      "tags": [
+        "science"
+      ],
+      "level": 0,
+      "id": 47
+    },
+    "q48": {
+      "front": "What is the answer to question 48?",
+      "back": "The answer to question 48 is 96.",
+      "tags": [
+        "easy",
+        "history"
+      ],
+      "level": 0,
+      "id": 48
+    },
+    "q49": {
+      "front": "What is the answer to question 49?",
+      "back": "The answer to question 49 is 98.",
+      "tags": [
+        "geography"
+      ],
+      "level": 0,
+      "id": 49
+    },
+    "q50": {
+      "front": "What is the answer to question 50?",
+      "back": "The answer to question 50 is 100.",
+      "tags": [
+        "science",
+        "math"
+      ],
+      "level": 0,
+      "id": 50
     }
-  }
+  },
+  "tags": [
+    "generated",
+    "test",
+    "demo"
+  ]
 }
