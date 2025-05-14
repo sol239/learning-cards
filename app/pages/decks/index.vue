@@ -1,11 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'; // Added onUnmounted
 import { navigateTo } from '#app';
-// Removed local deck loading and Decks import
-// import { Decks } from "~/model/Decks"
-// const deckModules = import.meta.glob('~/assets/decks/*.json', { eager: true });
-// const decks = Object.values(deckModules).map((module) => module.default);
-// const decksRef = ref([]);
 
 import { DropboxHandler } from '~/model/Dropbox';
 

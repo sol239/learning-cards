@@ -6,10 +6,14 @@ import { marked } from 'marked';
 import { useDecks } from '~/composables/useDecks'; // Import the shared state composable
 import { Decks } from '~/model/Decks';
 import { Deck } from '~/model/Deck';
+import { DropboxHandler } from '~/model/Dropbox'
 
 // Načti route a získej ID z URL
 const route = useRoute();
 const deckId = route.params.id;
+
+
+
 
 const error = ref(null);
 const showAllBacks = ref(false); // State to control showing all backs
@@ -17,7 +21,6 @@ const questionKatexDict = ref(null);
 let deckRef = ref(null); // State to hold the current deck
 
 // Importuj všechny decky
-const deckModules = import.meta.glob('~/assets/decks/*.json', { eager: true });
 
 const { decks } = useDecks(); // Use 'decks' directly from the composable
 console.log('Decks:', decks.value); // Log the loaded decks
@@ -49,14 +52,6 @@ try {
     error.value = 'An error occurred while loading the deck.';
 }
 
-// Zvýšení levelu otázky (lokálně – neukládá se zatím)
-function increaseLevel(questionKey) {
-    const question = deckRef.value?.cards?.[questionKey];
-    if (!question) return;
-
-    if (question.level === undefined) question.level = 0;
-    question.level = (question.level + 1) % 6;
-}
 
 function resetDeckLevels() {
     if (!deckRef.value || !deckRef.value.cards) return;
@@ -66,6 +61,11 @@ function resetDeckLevels() {
     });
 
     console.log(`Levels reset for deck: ${deckRef.value.name} (ID: ${deckRef.value.id})`);
+}
+
+function editDeck() {
+    console.log("Redirecting to edit deck page");
+    navigateTo(`/decks/${deckRef.value.id}/edit`);
 }
 
 // Toggle visibility of all card backs
@@ -176,6 +176,28 @@ const updateMathJax = () => {
 watch(() => hoveredQuestion.value, () => {
     updateMathJax();
 }, { deep: true });
+
+
+
+const TEXTAREA_ROWS = 4;
+
+
+function onDeckModified(key, side, value) {
+    console.log(`Deck modified: card=${key}, side=${side}, value=`, value);
+    
+    const dh = new DropboxHandler(); 
+
+    const deck = deckRef.value;
+
+    dh.saveDeckToDropbox(deck).then(() => {
+      console.log(`Deck ${deck.name} saved successfully after level increase.`);
+    }).catch((error) => {
+      console.error(`Error saving deck ${deck.name}:`, error);
+    });
+}
+
+
+
 </script>
 
 <template>
@@ -190,60 +212,43 @@ watch(() => hoveredQuestion.value, () => {
                     Decks
                 </UButton>
 
-                <USelect v-model="value" :items="items" class="w-48" />
-
-                <UButton icon="i-lucide-rotate-ccw" size="sm" color="neutral" variant="outline"
-                    @click="resetDeckLevels">
-                    Reset
+                <!-- Save Button -->
+                <UButton icon="i-lucide-save" size="sm" color="primary" variant="soft" @click="editDeck">
+                    Save
                 </UButton>
 
-                <UButton v-if="value !== 'Grid'" icon="i-lucide-eye" size="sm" color="neutral"
-                    :variant="showAllBacks ? 'solid' : 'outline'" @click="toggleShowAllBacks">
-                    {{ showAllBacks ? 'Hide All' : 'Show All' }}
-                </UButton>
             </div>
 
             <div v-if="deckRef.cards && Object.keys(deckRef.cards).length > 0">
-                <!-- Grid view -->
-                <UCard class="mb-4" v-if="value === 'Grid'">
-                    <div class="heatmap-container">
-                        <div v-for="(question, key) in deckRef.cards" :key="key" class="heatmap-cell"
-                            :class="[`heat-${question.level || 0}`, { 'show-back': showAllBacks }]"
-                            :title="question.front" @click="increaseLevel(key)" @mouseover="handleHover(question, key)"
-                            @mouseleave="clearHover">
-                            <div v-if="showAllBacks" class="card-back" v-html="questionKatexDict[key]?.back || ''">
-                            </div>
-                        </div>
-                    </div>
-                </UCard>
-
-                <!-- List view -->
-                <div v-else class="question-list">
+                
+                <!-- List View -->
+                <div>
                     <UCard v-for="(question, key) in deckRef.cards" :key="key" class="mb-3 ml-[5px] mt-[5px] ">
                         <div class="flex items-start">
                             <div class="flex-1">
-                                <div class="font-semibold mb-2" v-html="questionKatexDict[key]?.front || ''"></div>
+                                <!-- Front of the card -->
+                                <div class="font-semibold mb-2">
+                                    <textarea v-model="deckRef.cards[key].front" class="w-full border rounded p-2 mb-1"
+                                        :rows="TEXTAREA_ROWS" placeholder="Edit front..."
+                                        @input="onDeckModified(key, 'front', deckRef.cards[key].front)"></textarea>
+                                </div>
 
-                                <div v-if="visibleBacks[key] || showAllBacks"
-                                    class="mt-2 pt-2 border-t border-gray-200">
-                                    <p class="math-content" v-html="questionKatexDict[key]?.back || ''"></p>
+                                <!-- Back of the card -->
+                                <div class="mt-2 pt-2 border-t border-gray-200">
+                                    <textarea v-model="deckRef.cards[key].back" class="w-full border rounded p-2 mb-1"
+                                        :rows="TEXTAREA_ROWS" placeholder="Edit back..."
+                                        @input="onDeckModified(key, 'back', deckRef.cards[key].back)"></textarea>
                                 </div>
                             </div>
 
+                            <!-- Level heat cell -->
                             <div class="flex flex-row items-center space-x-2 ml-4">
-                                <div class="heatmap-cell-list" :class="`heat-${question.level || 0}`"
-                                    @click="increaseLevel(key)" />
-
-                                <UButton size="sm" color="neutral" variant="outline"
-                                    :icon="(visibleBacks[key] || showAllBacks) ? 'i-lucide-eye-off' : 'i-lucide-eye'"
-                                    @click="toggleBackVisibility(key)" :disabled="showAllBacks">
-                                    {{ (visibleBacks[key] || showAllBacks) ? 'Hide' : 'Show' }}
-                                </UButton>
+                                <div class="heatmap-cell-list" :class="`heat-${question.level || 0}`" />
                             </div>
-
                         </div>
                     </UCard>
                 </div>
+
             </div>
 
             <div v-else class="text-gray-500 italic">No questions in this deck.</div>
