@@ -138,7 +138,7 @@ onMounted(() => {
 
 
 <template>
-  <div class="flex items-center w-full justify-between text-lg py-4 px-4">
+  <div class="flex items-center w-full justify-between text-lg py-4 px-4 bg-white text-black border-b border-gray-200">
     <!-- Navigation Menu on the left/center -->
     <UNavigationMenu :items="navItems" class="flex-grow justify-start" />
 
