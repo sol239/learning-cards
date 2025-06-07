@@ -139,19 +139,33 @@ marked.setOptions({
   }
 })
 
-// Post-process math expressions
 function renderContent(content) {
-  if (!content) return ''
-  let html = marked.parse(content)
+  if (!content) return '';
 
-  // Inline math: $...$ or \(...\)
-  html = html.replace(/(?<!\\)(\$)([^$]+?)\1/g, (_, __, math) =>
-    katex.renderToString(math, { throwOnError: false })
-  )
-  // Display math: $$...$$ or \[...\] can be added similarly if needed
+  // 1. Render KaTeX display math
+  content = content.replace(/(?<!\\)\$\$([\s\S]+?)\$\$/g, (_, math) => {
+    try {
+      return katex.renderToString(math.trim(), { displayMode: true });
+    } catch (e) {
+      console.error(e);
+      return `<span class="text-red-500">KaTeX Error: ${e.message}</span>`;
+    }
+  });
 
-  return html
+  // 2. Render KaTeX inline math
+  content = content.replace(/(?<!\\)\$([^\$]+?)\$/g, (_, math) => {
+    try {
+      return katex.renderToString(math.trim(), { displayMode: false });
+    } catch (e) {
+      console.error(e);
+      return `<span class="text-red-500">KaTeX Error: ${e.message}</span>`;
+    }
+  });
+
+  // 3. Then run Markdown
+  return marked.parse(content);
 }
+
 
 
 
