@@ -172,7 +172,7 @@ onUnmounted(() => {
           Study
         </UButton>
 
-        <UButton icon="i-lucide-rotate-ccw" size="sm" color="neutral" variant="outline" @click="resetDeck(deckIndex)">
+        <UButton icon="i-lucide-rotate-ccw" size="sm" color="neutral" variant="soft" @click="resetDeck(deckIndex)">
           Reset Levels
         </UButton>
 
@@ -183,7 +183,7 @@ onUnmounted(() => {
       </div>
 
       <!-- Check if questions exist and is an object with keys -->
-      <UCard v-if="deck.cards && typeof deck.cards === 'object' && Object.keys(deck.cards).length > 0" class="mb-4">
+      <UCard style="background-color: #212121; border: 2px solid white;" v-if="deck.cards && typeof deck.cards === 'object' && Object.keys(deck.cards).length > 0" class="mb-4">
         <div class="heatmap-container">
           <!-- Iterate over question *values*. Use index as key if question itself lacks unique ID -->
           <div v-for="(question, questionValueIndex) in Object.values(deck.cards)" :key="questionValueIndex"
@@ -211,6 +211,7 @@ onUnmounted(() => {
   gap: 4px;
   width: 100%;
   padding: 5px;
+  background-color: #212121;
   /* Add some padding inside the card */
 }
 

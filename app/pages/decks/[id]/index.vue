@@ -294,6 +294,7 @@ onMounted(() => {
   grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
   gap: 4px;
   width: 100%;
+  background-color: #212121;
 }
 
 .heatmap-cell {
