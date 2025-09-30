@@ -173,7 +173,6 @@ nav {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    background-color: #181818;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 1rem;
