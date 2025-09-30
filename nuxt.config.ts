@@ -11,6 +11,7 @@ export default defineNuxtConfig({
         },
       ],
     },
+    baseURL: '/learning-cards', 
   },
 
   runtimeConfig: {
@@ -18,7 +19,6 @@ export default defineNuxtConfig({
       dropboxAppKey: process.env.DROPBOX_APP_KEY || 'key-not-found',
     }
   },
-
   ssr: false,
 
   modules: [
